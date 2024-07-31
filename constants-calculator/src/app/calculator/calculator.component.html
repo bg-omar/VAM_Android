@@ -1,0 +1,14 @@
+<div cdkDropList class="drop-area" (cdkDropListDropped)="drop($event)">
+  <div *ngFor="let item of droppedItems" class="dropped-item">
+    {{ item.constant }}: {{ item.value }} {{ item.unit }}
+  </div>
+</div>
+<div class="calculator">
+  <div *ngFor="let item of droppedItems" class="dropped-item">
+    {{ item.constant }}: {{ item.value }} {{ item.unit }}
+  </div>
+
+  <input [(ngModel)]="expression" placeholder="Enter formula using constants">
+  <button (click)="calculate()">Calculate</button>
+  <p>Result: {{ result }}</p>
+</div>
