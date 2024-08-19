@@ -1,0 +1,19 @@
+from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Spaceship
+from . import serializers
+
+
+def index(request, path=''):
+    """
+    The home page. This displays the single-page app.
+    """
+    return render(request, 'index.html')
+
+
+class SpaceshipViewSet(viewsets.ModelViewSet):
+    """
+    Provides basic CRUD functions for the Spaceship model
+    """
+    queryset = Spaceship.objects.all()
+    serializer_class = serializers.SpaceshipSerializer

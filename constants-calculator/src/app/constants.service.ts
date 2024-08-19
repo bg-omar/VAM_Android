@@ -1,20 +1,13 @@
 import { Injectable } from '@angular/core';
-import {constants} from "./constants";
-
-interface Constant {
-  constant: string;
-  value: number;
-  uncertainty: string | number;
-  unit: string;
-  symbol: string;
-}
+import {CONSTANTS} from "./constants";
+import {Constant} from "./constants.type"
 
 @Injectable({
   providedIn: 'root'
 })
 export class ConstantsService {
 
-  private constants: Constant[] = constants;
+  constants: Constant[] = CONSTANTS;
 
   constructor() { }
 

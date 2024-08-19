@@ -228,10 +228,13 @@
       <h1>Hello, {{ title }}</h1>
       <p>Congratulations! Your app is running. 🎉</p>
       <app-constants-list></app-constants-list>
+      <app-latex-display></app-latex-display>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
-      <app-calculator></app-calculator>
+      <app-constants-list (constantSelected)="onConstantSelected($event, 'mass')"></app-constants-list>
+      <app-constants-list (constantSelected)="onConstantSelected($event, 'speedOfLight')"></app-constants-list>
+      <app-calculator [selectedConstants]="selectedConstants"></app-calculator>
     </div>
   </div>
 </main>

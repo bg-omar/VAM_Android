@@ -1,4 +1,6 @@
-export const constants = [
+import {Constant} from "./constants.type"
+
+export const CONSTANTS: Constant[] = [
   {
     "constant": "speed of light",
     "value": 299792458,

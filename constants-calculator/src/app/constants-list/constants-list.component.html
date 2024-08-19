@@ -1,15 +1,18 @@
+<select (change)="selectConstant($event)">
+  <option *ngFor="let constant of constants" [value]="constant.constant">{{ constant.constant }}</option>
+</select>
 
-<table>
-<thead>
-<tr><td><h2>Name</h2></td><td><h3>symbol</h3></td> <td><h3>Value</h3></td></tr>
+<!--<table>-->
+<!--<thead>-->
+<!--<tr><td><h2>Name</h2></td><td><h3>symbol</h3></td> <td><h3>Value</h3></td></tr>-->
 
-</thead>
-  <tbody *ngFor="let constant of constants" class="constant-item" cdkDrag>
-  <tr>
-    <td><h3>{{ constant.constant }}</h3> </td>
-    <td> <h4>{{constant.symbol}}</h4></td>
-      <td><span>{{ constant.value }} {{ constant.unit }} </span></td>
-  </tr>
-  </tbody>
+<!--</thead>-->
+<!--  <tbody *ngFor="let constant of constants" class="constant-item" cdkDrag>-->
+<!--  <tr>-->
+<!--    <td><h3>{{ constant.constant }}</h3> </td>-->
+<!--    <td> <h4>{{constant.symbol}}</h4></td>-->
+<!--      <td><span>{{ constant.value }} {{ constant.unit }} </span></td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
 
-</table>
+<!--</table>-->
