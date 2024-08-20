@@ -1,0 +1,71 @@
+<div style="margin-left: 30px;">
+  <div>
+    <h5>Equation Terms</h5>
+    <table>
+      <thead>
+      <th>Name</th>
+      <th>Code</th>
+      <th>Type</th>
+      <th> <button (click)="addTerm()">+</button> </th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let term of terms;let i = index">
+        <td><input (change)="term.code=term.name?.replace(' ','_')?.toUpperCase()" type="text" [name]="'term-name-'+i" [(ngModel)]="term.name" /></td>
+        <td><input [disabled]="true" type="text" [name]="'term-code-'+i" [(ngModel)]="term.code" /></td>
+        <td>
+          <select id="term-type-{{ i }}" [name]="'term-type-'+i" [(ngModel)]="term.type">
+            <option value="variable">Variable</option>
+            <option value="constant">Constant</option>
+          </select>
+        </td>
+        <td><button (click)="removeTerm(i)">X</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <br>
+
+  <select [(ngModel)]="lhs" style="margin-right: 10px;">
+    <option value="-1" selected disabled>Select one </option>
+    <option *ngFor="let o of terms" [value]="o.name">{{o.name}}</option>
+  </select>  =
+  <span *ngFor="let term of equation.terms; let i = index">
+
+    <span mat-button [matMenuTriggerFor]="menu" #menuTrigger class="item" style="padding: 10px;cursor: pointer;">{{term.name}}</span>
+
+    <mat-menu #menu="matMenu">
+      <select (click) = "$event.stopPropagation()" (change)="changeType($event, i)" id="term{{ i }}" [name]="'term'+i">
+        <option value="-1" selected disabled>Select one </option>
+        <option value="variable">Variable</option>
+        <option value="operator">Operator</option>
+        <option value="constant">Constant</option>
+        <option value="remove">Remove</option>
+      </select>
+    </mat-menu>
+  </span>
+
+  <br>
+  <br>
+  <button (click)="create()">Create Equation</button>
+  <br>
+  <br>
+  <span *ngIf="see">{{lhs}} = {{rhs}}</span>
+
+  <hr style="margin-right: 65%;">
+  <button (click)="test()">Test Equation</button>
+
+
+  <div *ngFor="let term of testingValues" style="margin-top: 10px;">
+    <label style="margin-right: 10px;">{{term.name}}</label>
+    <input type="number" [(ngModel)]="term.value">
+  </div>
+
+  <br>
+  <br>
+  <button (click)="calculate()">Get Value</button>
+
+  {{lhs}} =  {{result}}
+
+</div>
+

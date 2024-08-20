@@ -46,18 +46,19 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-      <app-constants-list></app-constants-list>
-      <app-latex-display></app-latex-display>
-      <app-latex-paragraph [inputString]="'Hello there I have some math homework for you: $x^2 + y^2 = ?$'"></app-latex-paragraph>
-      <app-latex-paragraph [inputString]="'$$\'x=\\frac{-b\\pm\\\\sqrt{b^2-4ac}}{2a}\'$$'"></app-latex-paragraph>
+      <h2>Hello, {{ title }}</h2>
+
+      <app-latex-paragraph [inputString]="'Hello there I have some math homework for you: $x^2 + y^2 = ?$ $$ x=\\frac{-b\\pm\\\\sqrt{b^2-4ac}}{2a} $$ $$ \\oint_C \\mathbf{B} \\cdot d\\mathbf{l} = \\mu_0 I_{\\text{enc}} + \\mu_0 \\epsilon_0 \\frac{d \\Phi_E}{dt} $$'"></app-latex-paragraph>
+      <app-generate-equation></app-generate-equation>
+
+
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
       <app-constants-list (constantSelected)="onConstantSelected($event, 'mass')"></app-constants-list>
       <app-constants-list (constantSelected)="onConstantSelected($event, 'speedOfLight')"></app-constants-list>
       <app-calculator [selectedConstants]="selectedConstants"></app-calculator>
+
     </div>
   </div>
 </main>

@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import {ConstantsListComponent} from "./constants-list/constants-list.component";
 import {CalculatorComponent} from "./calculator/calculator.component";
-import {ChatComponent} from "./iframe/chat.component";
-import {LatexDisplayComponent} from "./latex-display/latex-display.component";
 import {LatexParagraphComponent} from "./latex-paragraph/latex-paragraph.component";
+import {GenerateEquationComponent} from "./generate-equation/generate-equation.component";
+
 
 
 
@@ -15,9 +15,8 @@ import {LatexParagraphComponent} from "./latex-paragraph/latex-paragraph.compone
     RouterOutlet,
     ConstantsListComponent,
     CalculatorComponent,
-    ChatComponent,
-    LatexDisplayComponent,
     LatexParagraphComponent,
+    GenerateEquationComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

@@ -57,12 +57,6 @@ export class CalculatorComponent implements OnInit, OnChanges {
       } else {
         this.result = 'Please select all constants';
       }
-      const func = new Function('constants', `return ${this.expression};`);
-      const constants = this.droppedItems.reduce((acc, item) => {
-        acc[item.constant] = item.value;
-        return acc;
-      }, {});
-      this.result = func(constants);
     } catch (error) {
       this.result = 'Error in formula';
     }

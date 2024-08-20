@@ -5,3 +5,14 @@ export interface Constant {
   unit: string;
   symbol: string;
 }
+
+export class EquationTerm {
+  type: 'variable' | 'constant' | 'operator' | undefined;
+  name: string | undefined ;
+  code: string | undefined ;
+  value: string | undefined;
+}
+
+export interface Equation {
+  terms: EquationTerm[];
+}
