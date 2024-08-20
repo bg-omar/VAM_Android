@@ -4,6 +4,7 @@ import {ConstantsListComponent} from "./constants-list/constants-list.component"
 import {CalculatorComponent} from "./calculator/calculator.component";
 import {ChatComponent} from "./iframe/chat.component";
 import {LatexDisplayComponent} from "./latex-display/latex-display.component";
+import {LatexParagraphComponent} from "./latex-paragraph/latex-paragraph.component";
 
 
 
@@ -16,6 +17,7 @@ import {LatexDisplayComponent} from "./latex-display/latex-display.component";
     CalculatorComponent,
     ChatComponent,
     LatexDisplayComponent,
+    LatexParagraphComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

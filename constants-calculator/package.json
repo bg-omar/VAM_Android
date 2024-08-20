@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "lts",
     "@angular/router": "lts",
     "@types/katex": "^0.16.7",
+    "extract-math": "^1.2.3",
     "intl": "^1.2.5",
     "katex": "^0.16.11",
     "ng-katex": "^2.0.3",
