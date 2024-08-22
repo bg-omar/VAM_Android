@@ -1,5 +1,5 @@
 ### Install dependencies using Yarn from NPM
-|                  `npm i -g @angular/cli` `npm i -g @ionic/cli` |  Install globally the angular cli (used nvm version)                        |
+|                  `npm i -g @angular/cli` `npm i -g @ionic/cli` |  Install globally the angular cli (used nvm version)               |
 |------------------------------------------:|:----------------------------------------------------------------------------------------|
 |                         `corepack enable` | Install yarn                                                                            |
 | `yarn config set nodeLinker node-modules` | setup yarn to use node_modules folder                                                   |

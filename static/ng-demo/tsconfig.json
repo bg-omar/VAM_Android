@@ -14,6 +14,10 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "@domain": ["./src/app/domain/*"],
+      "@repo": ["./src/app/repository/*"]
+    }
   }
 }

@@ -28,3 +28,17 @@ So, `d/dx a*b` means  `d/dx (a*b)`, but `d/dx a + b` means `(d/dx a) + b`. also 
 So, `a*b/c/d` means `((a*b)/c)/d`, and `a^b^c` means `a^(b^c)`.
 
 In case of power of trigonometric functions, you should provide input like `(sin(x))^3`, `sin^3(x)` will not work.
+
+
+
+|     Function | Derivative                  |
+|-------------:|:----------------------------|
+|              |                             |
+| c (constant) | 0                           |
+|            x | 1                           |
+|        c * x | c                           |
+|          X^c | c*x^c-1                     |
+|          x^n | n*x^n-1                     |
+|   x^-1=1 / x | -x^2                        |
+|  x^-c=l//x^c | -c*x^(-c-1)                 |
+| x1/2=sqrt(x) | 1/(2sqrt(x)), where x>0     |
