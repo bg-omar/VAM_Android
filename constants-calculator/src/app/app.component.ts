@@ -5,6 +5,7 @@ import {CalculatorComponent} from "./calculator/calculator.component";
 import {LatexParagraphComponent} from "./latex-paragraph/latex-paragraph.component";
 import {GenerateEquationComponent} from "./generate-equation/generate-equation.component";
 
+import { HomePage } from './app/home/home.page';
 
 
 
@@ -17,6 +18,7 @@ import {GenerateEquationComponent} from "./generate-equation/generate-equation.c
     CalculatorComponent,
     LatexParagraphComponent,
     GenerateEquationComponent,
+    HomePage,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
