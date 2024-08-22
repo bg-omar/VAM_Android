@@ -6,6 +6,7 @@ import {LatexParagraphComponent} from "./latex-paragraph/latex-paragraph.compone
 import {GenerateEquationComponent} from "./generate-equation/generate-equation.component";
 
 import { HomePage } from './app/home/home.page';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 
 
@@ -19,6 +20,8 @@ import { HomePage } from './app/home/home.page';
     LatexParagraphComponent,
     GenerateEquationComponent,
     HomePage,
+    IonApp,
+    IonRouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
