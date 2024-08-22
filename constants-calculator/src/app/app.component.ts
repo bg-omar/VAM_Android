@@ -6,6 +6,7 @@ import {ChatComponent} from "./iframe/chat.component";
 import {LatexDisplayComponent} from "./latex-display/latex-display.component";
 import {LatexParagraphComponent} from "./latex-paragraph/latex-paragraph.component";
 import { HomePage } from './app/home/home.page';
+import { IonApp, IonRouterOutlet } from '@ionic/angular/standalone';
 
 
 
@@ -20,6 +21,8 @@ import { HomePage } from './app/home/home.page';
     LatexDisplayComponent,
     LatexParagraphComponent,
     HomePage,
+    IonApp,
+    IonRouterOutlet,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
