@@ -50,6 +50,7 @@
       <p>Congratulations! Your app is running. 🎉</p>
       <app-constants-list></app-constants-list>
       <app-latex-display></app-latex-display>
+<!--      <calc-home></calc-home>-->
       <app-latex-paragraph [inputString]="'Hello there I have some math homework for you: $x^2 + y^2 = ?$'"></app-latex-paragraph>
       <app-latex-paragraph [inputString]="'$$\'x=\\frac{-b\\pm\\\\sqrt{b^2-4ac}}{2a}\'$$'"></app-latex-paragraph>
     </div>
@@ -57,7 +58,7 @@
     <div class="right-side">
       <app-constants-list (constantSelected)="onConstantSelected($event, 'mass')"></app-constants-list>
       <app-constants-list (constantSelected)="onConstantSelected($event, 'speedOfLight')"></app-constants-list>
-      <app-calculator [selectedConstants]="selectedConstants"></app-calculator>
+<!--      <app-calculator [selectedConstants]="selectedConstants"></app-calculator>-->
     </div>
   </div>
 </main>

@@ -25,6 +25,8 @@
     "katex": "^0.16.11",
     "ng-katex": "^2.0.3",
     "openai": "^4.54.0",
+    "@ionic/angular": "^7.8.6",
+    "@ngrx/component-store": "^17.2.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.4"
@@ -43,7 +45,35 @@
     "karma-jasmine-html-reporter": "~1.7.0",
     "ng-packagr": "lts",
     "prettier": "^2.7.1",
-    "typescript": "~5.4.5"
+    "typescript": "~5.4.5",
+
+
+    "@angular-eslint/builder": "17.0.0-alpha.0",
+    "@angular-eslint/eslint-plugin": "17.0.0-alpha.0",
+    "@angular-eslint/eslint-plugin-template": "17.0.0-alpha.0",
+    "@angular-eslint/template-parser": "17.0.0-alpha.0",
+
+    "@angular/compiler": "~17.3.12",
+
+    "@angular/language-service": "~17.3.12",
+    "@ionic/angular-toolkit": "^11.0.1",
+
+    "@types/jasminewd2": "~2.0.13",
+    "@types/node": "^20.14.8",
+    "@typescript-eslint/eslint-plugin": "^8.2.0",
+    "@typescript-eslint/parser": "^8.2.0",
+    "eslint": "8.57.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-jsdoc": "^50.2.2",
+    "eslint-plugin-prefer-arrow": "1.2.3",
+
+    "jasmine-spec-reporter": "~7.0.0",
+
+    "karma-coverage-istanbul-reporter": "~3.0.3",
+
+    "protractor": "~7.0.0",
+    "ts-node": "~10.9.2"
+
   },
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }

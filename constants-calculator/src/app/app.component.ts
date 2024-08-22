@@ -5,6 +5,7 @@ import {CalculatorComponent} from "./calculator/calculator.component";
 import {ChatComponent} from "./iframe/chat.component";
 import {LatexDisplayComponent} from "./latex-display/latex-display.component";
 import {LatexParagraphComponent} from "./latex-paragraph/latex-paragraph.component";
+import { HomePage } from './app/home/home.page';
 
 
 
@@ -18,6 +19,7 @@ import {LatexParagraphComponent} from "./latex-paragraph/latex-paragraph.compone
     ChatComponent,
     LatexDisplayComponent,
     LatexParagraphComponent,
+    HomePage,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
