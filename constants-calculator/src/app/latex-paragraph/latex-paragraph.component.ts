@@ -8,7 +8,7 @@ import { extractMath } from 'extract-math'
   standalone: true,
   imports: [],
   templateUrl: './latex-paragraph.component.html',
-  styleUrl: './latex-paragraph.component.scss'
+  styleUrls: ['./latex-paragraph.component.scss']
 })
 export class LatexParagraphComponent {
   @Input({ required: true }) inputString!: string;

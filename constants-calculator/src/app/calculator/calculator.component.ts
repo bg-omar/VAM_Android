@@ -15,7 +15,6 @@ import {Constant} from "../constants.type"
     NgForOf
   ],
   templateUrl: './calculator.component.html',
-  styleUrl: './calculator.component.scss'
 })
 export class CalculatorComponent implements OnInit, OnChanges {
   @Input() selectedConstants: any = {};

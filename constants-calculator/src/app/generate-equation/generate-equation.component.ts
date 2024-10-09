@@ -65,7 +65,7 @@ export class DialogComDialog {
     DialogComDialog
   ],
   templateUrl: './generate-equation.component.html',
-  styleUrl: './generate-equation.component.scss'
+  styleUrls: ['./generate-equation.component.scss']
 })
 export class GenerateEquationComponent implements OnInit {
   @ViewChild('menuTrigger') menuTrigger: MatMenuTrigger | undefined;

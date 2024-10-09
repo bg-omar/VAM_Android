@@ -1,69 +1,40 @@
-<main class="main">
-  <div class="content">
-    <div class="left-side">
-      <img src = "logo.svg" alt="My Happy SVG"/>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
-      <app-constants-list></app-constants-list>
-      <app-latex-display></app-latex-display>
-<!--      <calc-home></calc-home>-->
-      <app-latex-paragraph [inputString]="'Hello there I have some math homework for you: $x^2 + y^2 = ?$'"></app-latex-paragraph>
-      <app-latex-paragraph [inputString]="'$$\'x=\\frac{-b\\pm\\\\sqrt{b^2-4ac}}{2a}\'$$'"></app-latex-paragraph>
-    </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <app-constants-list (constantSelected)="onConstantSelected($event, 'mass')"></app-constants-list>
-      <app-constants-list (constantSelected)="onConstantSelected($event, 'speedOfLight')"></app-constants-list>
-<!--      <app-calculator [selectedConstants]="selectedConstants"></app-calculator>-->
-      <ion-app>
-        <ion-router-outlet></ion-router-outlet>
-      </ion-app>
+<ion-app>
+  <ion-router-outlet></ion-router-outlet>
+</ion-app>
 
-      ★⌒ Ｙ⌒Ｙ⌒Ｙ⌒Ｙ⌒ ヾ(oﾟДﾟ)ﾉ
+<ion-app [class.dark-theme]="dark">
+  <ion-split-pane contentId="main-content">
 
-      (o^-')b
+    <ion-menu contentId="main-content">
+      <ion-content>
+        <ion-list lines="none">
+          <ion-list-header>
+            VLC Remote
+          </ion-list-header>
+          <ion-menu-toggle autoHide="false" *ngFor="let p of appPages; let i = index">
+            <ion-item [routerLink]="p.url" routerLinkActive="selected" routerDirection="root" detail="false">
+              <ion-icon slot="start" [name]="p.icon + '-outline'"></ion-icon>
+              <ion-label>
+                {{p.title}}
+              </ion-label>
+            </ion-item>
 
-      ᕙ(▀̿̿ĺ̯̿̿▀̿ ̿) ᕗ
+          </ion-menu-toggle>
+        </ion-list>
 
-      ٩( ᗒᗨᗕ )۶
+        <ion-list [inset]="true">
+          <ion-item>
+            <ion-icon slot="start" name="moon-outline"></ion-icon>
+            Dark Mode
+            <ion-toggle [(ngModel)]="dark" (ionChange)="toggleChange($event)" justify="space-between"></ion-toggle>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
 
-      Σ(-᷅_-᷄๑)
+    <ion-router-outlet id="main-content"></ion-router-outlet>
 
-      🍔ԅ( ͒ ۝ ͒ )
+  </ion-split-pane>
 
-      ♡(ू•‧̫•ू⑅)
+</ion-app>
 
-      ( ͡~ ͜ʖ ͡° )
-
-      (ノಠ益ಠ)ノ彡┻━┻
-
-      ༼;´༎ຶ ۝ ༎ຶ༽
-
-      ( ͡°з ͡°)
-
-      └(・。・)┘
-
-      (〜^∇^)〜
-
-      ¯\_(:|)_/¯
-
-      ¯\_( ͠° ͟ʖ ͠°)_/¯
-
-      ( ͡°- ͡°)
-
-      (∿°○°)∿ ︵ ǝʌol
-
-      乁( ͡ಠ ʖ̯ ͡ಠ)ㄏ
-
-      ♡(ﾐ ᵕ̣̣̣̣̣̣ ﻌ ᵕ̣̣̣̣̣̣ ﾐ)ﾉ
-
-      ಠ ಠ
-
-      (༎ຶ⌑༎ຶ)
-    </div>
-  </div>
-</main>
-
-
-
-<router-outlet />

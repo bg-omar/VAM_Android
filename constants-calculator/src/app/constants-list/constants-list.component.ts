@@ -13,7 +13,7 @@ import {CONSTANTS} from "../constants";
     NgForOf
   ],
   templateUrl: './constants-list.component.html',
-  styleUrl: './constants-list.component.scss'
+  styleUrls: ['./constants-list.component.scss']
 })
 export class ConstantsListComponent implements OnInit {
 

@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './differentiator.component.html',
-  styleUrl: './differentiator.component.scss'
+  styleUrls: ['./differentiator.component.scss']
 })
 export class DifferentiatorComponent {
 
