@@ -130,6 +130,7 @@
     "@angular/compiler": "^17.0.0",
     "@angular/compiler-cli": "^17.0.0",
     "@angular/core": "^17.0.0",
+    "@angular/http": "^17.0.0",
     "@angular/language-service": "^17.0.0",
     "@capacitor/cli": "5.5.1",
     "@cypress/schematic": "^2.5.0",
@@ -164,7 +165,7 @@
     "karma-coverage-istanbul-reporter": "~3.0.3",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "ng-packagr": "lts",
+    "ng-packagr": "^17.0.0",
     "prettier": "^2.7.1",
     "protractor": "~7.0.0",
     "puppeteer": "^11.0.0",
@@ -182,5 +183,5 @@
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.1"
   },
-  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
+  "packageManager": "yarn@4.5.0"
 }

@@ -1,12 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
 export const routes: Routes = [
   {
     path: '',
     redirectTo: 'account',
     pathMatch: 'full'
+  },
+  {
+    path: 'differentiator',
+    loadChildren: () => import('./pages/differentiator/differentiator.module').then(m => m.DifferentiatorModule)
+  },
+  {
+    path: 'viewname',
+    loadChildren: () => import('./pages/view-name/view-name.module').then(m => m.ViewNameModule)
   },
   {
     path: 'home',
@@ -31,4 +38,3 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

@@ -23,7 +23,7 @@ import {IframeComponent} from "./iframe/iframe.component";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     CommonModule,

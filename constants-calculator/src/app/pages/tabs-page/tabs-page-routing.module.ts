@@ -37,6 +37,24 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'differentiator',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../differentiator/differentiator.module').then(m => m.DifferentiatorModule)
+          }
+        ]
+      },
+      {
+        path: 'viewname',
+        children: [
+          {
+            path: '',
+            loadChildren: () => import('../view-name/view-name.module').then(m => m.ViewNameModule)
+          }
+        ]
+      },
+      {
         path: '',
         redirectTo: '/app/tabs/home',
         pathMatch: 'full'

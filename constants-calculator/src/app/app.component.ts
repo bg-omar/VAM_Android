@@ -5,6 +5,7 @@ import {GetResult, Preferences} from '@capacitor/preferences';
 import { Storage } from '@ionic/storage-angular';
 import {SharedPrefsPlugin} from "shared-prefs-plugin/src";
 import {Capacitor} from "@capacitor/core";
+import { ApiService } from './api.service';
 
 
 
@@ -41,6 +42,7 @@ export class AppComponent implements OnInit {
     private storage: Storage,
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
+    private apiService: ApiService
   ) {
     this.initializeApp();
   }
@@ -48,6 +50,9 @@ export class AppComponent implements OnInit {
 
 
   async ngOnInit() {
+    this.apiService.getData().subscribe(data => {
+      console.log(data);
+    });
     await this.storage.create();
     console.log(SharedPrefsPlugin);
     this.swUpdate.versionUpdates.subscribe(async res => {

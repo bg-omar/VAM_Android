@@ -1,12 +1,13 @@
 ### Install dependencies using Yarn from NPM
-|                  `npm i -g @angular/cli` `npm i -g @ionic/cli` |  Install globally the angular cli (used nvm version)               |
-|------------------------------------------:|:----------------------------------------------------------------------------------------|
-|                         `corepack enable` | Install yarn                                                                            |
-| `yarn config set nodeLinker node-modules` | setup yarn to use node_modules folder                                                   |
-|                 `yarn set version stable` | To upgrade yarn to latest version                                                       |
-|                                    `yarn` | Install dependencies using yarn, does NOT MAKE `package-lock`, ONLY creates `JARN.lock` |
-| (not needed optional) -->  `yarn install` | Install dependencies and CREATE / EDIT `package-lock.json` & `JARN.lock`                |
-|                             `npm install` | before you push to github to update your package.lock.json                              |
+| `npm i -g @angular/cli @ionic/cli @capacitor/cli` | Install globally the angular cli (used nvm version)                                     |
+|--------------------------------------------------:|:----------------------------------------------------------------------------------------|
+|                                 `corepack enable` | Install yarn                                                                            |
+|         `yarn config set nodeLinker node-modules` | setup yarn to use node_modules folder                                                   |
+|                         `yarn set version stable` | To upgrade yarn to latest version                                                       |
+|                                            `yarn` | Install dependencies using yarn, does NOT MAKE `package-lock`, ONLY creates `JARN.lock` |
+|         (not needed optional) -->  `yarn install` | Install dependencies and CREATE / EDIT `package-lock.json` & `JARN.lock`                |
+|                                     `npm install` | before you push to github to update your package.lock.json                              |
+|                  `yarn explain peer-requirements` | shows the peer dependencies errors                                                      |
 
 
 # Angular 6 / Django Rest Framework / CSRF demo app
