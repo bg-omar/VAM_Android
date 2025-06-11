@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 // Node based library copied under src/lib
-const differentiator = require('@lib/node-differentiator');
+import {differentiator} from '@lib/node-differentiator';
 
 @Component({
   selector: 'app-differentiator',

@@ -39,4 +39,6 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
 
-yy
+find . -type f -print0 | xargs -0 sed -i 's/vlc/vam/g'
+find . -type f -print0 | xargs -0 sed -i 's/Vlc/Vam/g'
+find . -type f -print0 | xargs -0 sed -i 's/VLC/VAM/g'

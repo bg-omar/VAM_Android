@@ -8958,6 +8958,11 @@ levn@^0.4.1:
     prelude-ls "^1.2.1"
     type-check "~0.4.0"
 
+lex@^1.7.9:
+  version "1.7.9"
+  resolved "https://registry.npmjs.org/lex/-/lex-1.7.9.tgz"
+  integrity sha512-vzaalVBmFLnMaedq0QAsBAaXsWahzRpvnIBdBjj7y+7EKTS6lnziU2y/PsU2c6rV5qYj2B5IDw0uNJ9peXD0vw==
+
 license-webpack-plugin@4.0.2:
   version "4.0.2"
   resolved "https://registry.npmjs.org/license-webpack-plugin/-/license-webpack-plugin-4.0.2.tgz"
