@@ -1,0 +1,52 @@
+<ion-header class="ion-no-border" [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+
+  <main class="main">
+    <div class="content">
+      <div class="left-side">
+        <app-emoticon-list></app-emoticon-list>
+        <h1>Hello, {{ title }}</h1>
+        <p>yupp! Your app is running. 🎉</p>
+<!--        <app-constants-list></app-constants-list>-->
+
+        <app-latex-paragraph [inputString]="'Inline: $x^2 + y^2 = ?$'"></app-latex-paragraph>
+        <app-latex-paragraph [inputString]="'$$x=\\frac{-b\\pm\\\\sqrt{b^2-4ac}}{2a}$$'"></app-latex-paragraph>
+      </div>
+      <div class="divider" role="separator" aria-label="Divider"></div>
+      <div class="right-side">
+        <app-constants-list (constantSelected)="onConstantSelected($event, 'mass')"></app-constants-list>
+        <app-constants-list (constantSelected)="onConstantSelected($event, 'speedOfLight')"></app-constants-list>
+              <app-calculator [selectedConstants]="selectedConstants"></app-calculator>
+
+<!--              <dialog-overview-example-dialog></dialog-overview-example-dialog>-->
+<!--        <app-differentiator></app-differentiator>-->
+<!--        <app-view-name></app-view-name>-->
+        <!--            <calc-home></calc-home>-->
+        <form (submit)="onSubmit()">
+          <input type="text" [(ngModel)]="functionInput" placeholder="Enter function" name="function">
+          <button type="submit">Calculate Derivative</button>
+        </form>
+        <div *ngIf="result">
+          <h3>Result:</h3>
+          <p>{{ result.result }}</p>
+          <h3>Story:</h3>
+          <ul>
+            <li *ngFor="let step of result.story">{{ step }}</li>
+          </ul>
+        </div>
+        <app-large-latex-text-component></app-large-latex-text-component>
+      </div><!--The end of Right-Side-->
+    </div>  <!--The end of content-->
+  </main>
+
+
+
+
+</ion-content>

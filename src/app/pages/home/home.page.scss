@@ -1,0 +1,87 @@
+.calculatorContainer {
+
+  padding-bottom: 2.5rem;
+  background-color: white;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.emoticon-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  font-size: 12px;
+}
+
+.emoticon-item {
+  font-size: 24px;
+  margin: 10px;
+}
+
+.sumContainer {
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: flex-end;
+  background-color: rgba(99, 158, 226, 0.1);
+  padding: 4rem 2rem;
+}
+
+.sumContainer h1,
+.sumContainer h4,
+.sumContainer p {
+
+  margin: 0;
+  padding: 0;
+}
+
+.sumContainer h1 {
+  --minFontSize: 30px;
+  --maxFontSize: 100px;
+  --scaler: 15vw;
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sumContainer p {
+  --minFontSize: 20px;
+  --maxFontSize: 60px;
+  --scaler: 8vw;
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  color: rgb(163, 163, 163);
+}
+
+.sumContainer h4 {
+
+  color: rgb(197, 197, 197);
+}
+
+.button,
+.specialButton {
+
+  margin: 0.2rem;
+  padding: 1.5rem;
+  border-radius: 15px;
+  --minFontSize: 10px;
+  --maxFontSize: 60px;
+
+  font-size: clamp(var(--minFontSize), var(--scaler), var(--maxFontSize));
+}
+
+.button {
+
+  color: rgb(255, 255, 255);
+  background-color: rgb(58, 58, 58);
+}
+
+.specialButton {
+
+  color: rgb(255, 255, 255);
+  background-color: var(--blue-color);
+}

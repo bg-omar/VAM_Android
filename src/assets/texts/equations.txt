@@ -1,0 +1,325 @@
+Electron Radius
+R_e=2 R_c=\alpha^2 a_0=\frac{\lambda_c}{2 \pi} \alpha=\frac{e^2}{4 \pi \varepsilon_0 m_c c^2}=\frac{e^2}{8 \pi \varepsilon_0 F_{\text {max}} R_c}
+\quad q_p=\frac{e^2}{\alpha}
+{L_p}=\sqrt{\frac{\hbar G}{c^3}}
+
+Energy
+E=2 F_{\max } R_c \quad \lambda_c=\frac{2 \pi c R_c}{C_e}=\frac{4 \pi F_{\max } R_c^2}{C_e m_e C}
+
+Gravity
+G=\frac{m_c^2}{\hbar c \alpha_g}=\frac{\alpha F_{\operatorname{max}} L_p^2}{m_e^2}=\frac{C_e c^3 t_p^2}{R_c m_e}
+
+Fine Structure Constant
+\alpha=\frac{\omega_c R_c}{c}=\frac{\lambda_c}{4 \pi R_c}=\frac{C_e e^2}{8 \pi \varepsilon_0 R_c^2 c F_{\text {max }}}
+
+Planck Constants
+m_p=\sqrt{\frac{\hbar c}{G}}
+L_p=\frac{\lambda_e C_e t_p}{2 \pi R_c}
+
+Gravitational Coupling Constant
+\alpha_g=t_p^2 \omega_c^2=\frac{m_e^2}{m_p^2}=\frac{C_e^2 t_p^2}{R_c^2}=\frac{F_{\max } t_p^2}{A_0 M_e}
+\alpha_g=\frac{G m_2^2}{\hbar c}=\frac{F_{max} 2 C_e t_p^2}{\hbar}
+
+Electron Radius
+
+R_x=\frac{F_{\max } R_e^2}{m_e C_e^2}=\frac{c^2 R_c}{2 C_e}
+
+ \text { Foton } \longrightarrow \longleftarrow \text { Electron }
+ \omega R=\omega R
+(2 \pi f) R=\sqrt{\frac{k_e}{m_e}} R_c
+(2 \pi f) R=\sqrt{\frac{F_{max}}{m_e N R_c}}\left(N R_c\right)
+R=\sqrt{\frac{F_{max}}{m_e N R_c}}\left(\frac{n R_c}{2 \pi f}\right)
+R^2=\left(\frac{F_{max} }{m_e N R_c}\right)\left(\frac{n^2 R_c^2}{4 \pi^2 f^2}\right)
+
+R^2=\frac{n c^2 R_c}{4 \pi C_e f}
+
+
+
+e=\frac{\sqrt{2 \alpha h}}{\mu_0 c} = \frac{\sqrt{4 C_e h}}{\mu_0 c^2}   \text { where } \rightarrow h = \frac{4 \pi F_{\text {max}} R_c^2}{C_e}   \rightarrow e=\frac{\sqrt{16 \pi F_{m a} R_c^2}}{\mu_0 c^2}
+
+
+\alpha_g=\frac{C_e^2 t_p^2}{R_c^2} = \frac{F_{\text {max }} t_p^2}{A_0 M_e}
+
+\alpha=\frac{\lambda_e}{4 \pi R_c} = \frac{\omega_c R_c}{c}
+
+l_p=\frac{\lambda_e C_e t_p}{2 \pi R_c}  = \lambda_e \frac{\sqrt{\alpha_g}}{2 \pi}
+
+\
+G=\frac{C_e c^3 t_p^2}{R_c m_e}
+
+
+
+\frac{D \vec{U}}{D t}=\frac{1}{\rho} \nabla P-\nabla \phi_g-\nabla \frac{\omega^2 r^2}{2}-2 \overrightarrow{\omega} \times \vec{u}
+
+All Above here are Latex written formulas That are supposed to be used in combination with the following below and should also be a match for constants found at: https://pml.nist.gov/cuu/Constants/Table/allascii.txt
+
+  {
+    "constant": "speed-of-light",
+    "value": 299792458,
+    "uncertainty": "(exact)",
+    "unit": "m s^-1",
+    "symbol": "c"
+  },
+  {
+    "constant": "vorticity-related",
+    "value": 1093845.63,
+    "uncertainty": "(exact)",
+    "unit": "m s^-1",
+    "symbol": "C_e"
+  },
+  {
+    "constant": "Force",
+    "value": 29.053507,
+    "uncertainty": "(exact)",
+    "unit": "N",
+    "symbol": "F_{max}"
+  },
+  {
+    "constant": "fine-structure",
+    "value": 0.0072973525693,
+    "uncertainty": 1.1e-12,
+    "unit": " ",
+    "symbol": "\\alpha"
+  },
+  {
+    "constant": "Planck constant",
+    "value": 6.62607015e-34,
+    "uncertainty": "(exact)",
+    "unit": "J Hz^-1",
+    "symbol": "h"
+  },
+  {
+    "constant": "reduced Planck constant",
+    "value": 1.054571817e-34,
+    "uncertainty": "(exact)",
+    "unit": "J s",
+    "symbol": "\\hbar"
+  },
+  {
+    "constant": "elec. permittivity",
+    "value": 8.8541878128e-12,
+    "uncertainty": 1.3e-21,
+    "unit": "F m^-1",
+    "symbol": "\\varepsilon_0"
+  },
+  {
+    "constant": "mag. permeability",
+    "value": 1.25663706212e-7,
+    "uncertainty": 1.9e-16,
+    "unit": "N A^-2",
+    "symbol": "mu_0"
+  },
+  {
+    "constant": "Constant of gravitation",
+    "value": 6.6743e-11,
+    "uncertainty": 1.5e-15,
+    "unit": "m^3 kg^-1 s^-2",
+    "symbol": "G"
+  },
+  {
+    "constant": "gravitational coupling constant",
+    "value": 1.7518e-45,
+    "uncertainty": "(exact)",
+    "unit": "",
+    "symbol": "\\alpha_g"
+  },
+  {
+    "constant": "Coulomb Barrier",
+    "value": 1.40897017e-15,
+    "uncertainty": "(exact)",
+    "unit": "m",
+    "symbol": "R_c"
+  },
+  {
+    "constant": "Bohr radius",
+    "value": 5.29177210903e-11,
+    "uncertainty": 8e-21,
+    "unit": "m",
+    "symbol": "A_0"
+  },
+
+
+
+
+\frac{D y}{d z}=0
+\frac{d y^2}{d t}+u \frac{d x}{d x}+v \frac{d y}{d y}=0
+\frac{d u}{d x}+\frac{d v}{d y}=-\frac{1}{h} \frac{D h}{D t}
+\frac{d}{d t}+u \frac{d g}{d z}+r \frac{d z}{d y}+(\xi+f)\left(\frac{d u}{d x}+\frac{d v}{d g}\right)+\beta r=0
+\frac{D G}{D E}-\frac{(G+5)}{h}+\frac{D p}{D t}+\frac{D f}{D E}=0
+\frac{1}{h} \frac{D(\xi+f)}{D E}-\frac{(\xi+f)}{h^2} \frac{D h}{D E}=\frac{1}{h}
+
+
+\frac{D}{D E}\left(\frac{(\xi+f)}{h}\right)=\frac{1}{h}
+\beta h V=\frac{1}{\rho} \frac{d T^{\prime \prime}(y)}{d y} d y
+\frac{d \xi}{d t}+\left(l \cdot \nabla g+(\xi \cdot g)\left(\frac{d u}{d x}+\frac{d v}{d y}\right)+\left(\frac{d w}{d x} \frac{d v}{d z}-\frac{d \omega}{d y} \frac{d u}{d z}\right)+\omega \frac{d f}{d z}\right.
+\frac{d\left(\frac{1}{p}\right)}{d x} \frac{\bar{d} p}{d y}+\frac{d p}{d x} \frac{d\left(\frac{1}{p}\right)}{d y}
+
+weerstand
+
+V_0=\frac{\left(\frac{\Gamma}{2 \pi}\right)}{r} \quad \psi=-\frac{\Gamma}{2 \pi} \ln (r)
+V_\theta=-\frac{r d \varphi}{d r} \quad \phi=\frac{\Gamma}{2 \pi} \theta
+V_r=-\frac{1}{r} \frac{d \theta}{d \theta}
+
+
+\Gamma=\int(c a c+v d g) \rightarrow \Gamma=V \cos (x) \delta
+
+
+Boyle's law
+$\left.P V=\frac{1}{3} T-\frac{1}{6} \rho \iint\left(u^2+V^2+\omega^3\right)(x d g d x+y) d x+2 d x d y\right)$ Newton Patentre on de $20 n$
+
+\Phi=\frac{G M}{r}+\frac{1}{6} \Lambda c^2 r^2
+
+\rho_{\text {rcamm }}=\frac{1}{v} \frac{1}{2} \hbar \omega \approx \frac{\hbar}{2 \pi^2 c^3} \int_0^4 \omega^3 d \omega
+=\frac{\hbar}{8 \pi^2 c^3} \omega_{\text {max }}^4
+\Lambda \approx \frac{G^2 m^6}{\hbar^4}
+
+
+
+\int_S(x d \cos d x+y d x d z+2 d x d y)
+\iiint_0(1+1+1) d x d y d z
+\begin{array}{c}
+3 \int_0^d d x \int_0^{-1} d \int_0^l d x
+\frac{3}{3}
+
+
+Euler Lagrange equictons of motion
+
+L(a ; \dot{q} ; b)=T-V \quad L=-\frac{1}{4} F_{\mu \nu} F_{\mu N}+\frac{1}{c} j_\mu A_\mu
+\text { Classir modired }
+\text { Qumantiad }
+\vec{\nabla} \cdot \vec{E}=\frac{R}{\varepsilon_0}+\frac{\partial \Lambda}{\partial r}+\frac{m c^2 \Lambda}{\hbar} \Lambda
+\vec{H} \cdot \vec{B}=0
+\nabla \times E=-\frac{\partial B}{\partial t}-\frac{m c^2}{\hbar} B
+
+
+
+
+\frac{\left.d\left(\frac{\partial L}{\partial \dot{q}_i}\right)-\frac{\partial L}{\partial q_i}\right)}{d t}=0
+
+
+
+
+\frac{\partial^2 \phi}{\partial t^2}-\frac{\partial^2 \phi}{\partial x^2}+\sin (\phi)=0
+
+$\phi^{\prime}(x, \theta)=$ mumber $\quad$ Back lund Grangomatre
+
+
+
+
+\frac{\partial \phi_1}{\partial x}=\frac{\partial \phi_1}{\partial x}+2 a \sin \left(\frac{\phi_i+\phi_i}{2}\right)
+\frac{\partial \phi_1}{\partial t}=\frac{\partial \phi_1}{\partial t}+2 a \sin \left(\frac{\left.\phi_i-\phi_2\right)}{2}\right)
+
+
+
+
+$I=\int_0^1 \int_0^{1-x} \int_0^{1-x-y} d z d y d x$
+Enstrophy
+$\varepsilon=$ potential densits - quabity Relabed to Knelic Enesy in flow model corresponding to dissapation
+
+\varepsilon(u)= \int_{\Omega}|\nabla u|^2 d x
+\Omega
+|\nabla u|^2=\sum_{j=1}^n\left|\partial_i u^j\right|^2
+
+for incompressible $\nabla \cdot u=0 \quad$ Enstrophy is Integrad squarady varticit's
+
+\varepsilon(\omega)=\int_{\Omega} \omega^2 d x \quad \text { or inflow Vebcity } \varepsilon_{(u)}=\int_{\Omega} \nabla u^2 d S
+
+in Naver Slokes
+
+\frac{d\left(\frac{1}{2} \int_r u^2\right)}{d t}=-v \varepsilon_{(u)}
+
+$V=$ Kine metic $V_{\text {iscocity }}$
+
+Rosby nummer
+
+R_0=\frac{U}{\Omega d}
+
+
+Hoe Keiner Rasbby Sterker Rotaie effect
+Groter Cocidis Fefret
+EKman nummer
+
+E_k=\frac{V_e}{\Omega_e H^2}
+
+tov. Interne radadin
+Relatiey I I
+Vertical friction
+
+
+
+
+\tau=I X
+I=\frac{p \pi R^2 h R^2}{2}
+\stackrel{R}{\square}
+\text { h } I=\frac{m R^2}{2}
+T=\frac{\pi R^2 Q}{2}
+m=p
+m=\rho\left(\pi R^2 H\right)
+
+
+
+\frac{d \xi}{d t}+\frac{U_p}{r} \frac{d g}{d \phi}+\frac{d g}{d r}+\frac{d g}{d z}=\xi \frac{d U_2}{d z}+V \nabla^2 g
+\text { Momentum formic }
+
+
+\text { integratée van } b \operatorname{lok} N
+h\left(\frac{d u}{d x}+\frac{d v}{d y}\right)+\omega_w-\omega_b=0
+h\left(\frac{d u}{d x}+\frac{d v}{d y}\right)+\frac{D v}{d t}+\frac{D b}{d t}=0
+
+
+\mathrm{p}=\rho g(N-2)
+
+
+\frac{d}{d x} \frac{d V}{d t}+u \frac{d V}{d x}+v \frac{d V}{d g}+f u=-9 \frac{d N}{d y}+R_y
+\frac{d^2 v}{d t d x}+\frac{d u d x}{d x} d x+u \frac{d^2 v}{d x^2}+\frac{d r d y}{d x} \frac{d y}{d y}+V \frac{d^2 y}{d x d y}+\int \frac{d u}{d x}=-g \frac{d^2 N}{d x d y}+\frac{d x P}{d x}
+\frac{\partial n}{d t}=\frac{d \theta}{d t}+u \frac{d}{d t}+v \frac{d y}{d y}+\omega \frac{d n}{d z}
+
+
+\frac{D(\xi \cdot g)}{D \in}=\frac{d \xi}{d t}+U \cdot \nabla \xi+\omega \frac{d l}{d z}
+\text { ass } \frac{D n}{D E}=0
+\text { dan }
+\frac{d \xi}{d t}+u \cdot \nabla(\xi+f)=0 \text { met } f=\text { constant words }
+\frac{d e}{d t}+J\left(\psi, \nabla^2 \psi\right)=0
+
+
+\frac{D y}{d z}=0
+\frac{d y^2}{d t}+u \frac{d x}{d x}+v \frac{d y}{d y}=0
+\frac{d u}{d x}+\frac{d v}{d y}=-\frac{1}{h} \frac{D h}{D t}
+\frac{d}{d t}+u \frac{d g}{d z}+r \frac{d z}{d y}+(\xi+f)\left(\frac{d u}{d x}+\frac{d v}{d g}\right)+\beta r=0
+\frac{D G}{D E}-\frac{(G+5)}{h}+\frac{D p}{D t}+\frac{D f}{D E}=0
+\frac{1}{h} \frac{D(\xi+f)}{D E}-\frac{(\xi+f)}{h^2} \frac{D h}{D E}=\frac{1}{h}
+
+
+\frac{D}{D E}\left(\frac{(\xi+f)}{h}\right)=\frac{1}{h}
+\beta h V=\frac{1}{\rho} \frac{d T^{\prime \prime}(y)}{d y} d y
+\frac{d \xi}{d t}+\left(l \cdot \nabla g+(\xi \cdot g)\left(\frac{d u}{d x}+\frac{d v}{d y}\right)+\left(\frac{d w}{d x} \frac{d v}{d z}-\frac{d \omega}{d y} \frac{d u}{d z}\right)+\omega \frac{d f}{d z}\right.
+\frac{d\left(\frac{1}{p}\right)}{d x} \frac{\bar{d} p}{d y}+\frac{d p}{d x} \frac{d\left(\frac{1}{p}\right)}{d y}
+
+weerstand
+
+V_0=\frac{\left(\frac{\Gamma}{2 \pi}\right)}{r} \quad \psi=-\frac{\Gamma}{2 \pi} \ln (r)
+V_\theta=-\frac{r d \varphi}{d r} \quad \phi=\frac{\Gamma}{2 \pi} \theta
+V_r=-\frac{1}{r} \frac{d \theta}{d \theta}
+
+
+\Gamma=\int(c a c+v d g) \rightarrow \Gamma=V \cos (x) \delta
+
+
+Boyle's law
+$\left.P V=\frac{1}{3} T-\frac{1}{6} \rho \iint\left(u^2+V^2+\omega^3\right)(x d g d x+y) d x+2 d x d y\right)$ Newton Patentre on de $20 n$
+
+\Phi=\frac{G M}{r}+\frac{1}{6} \Lambda c^2 r^2
+
+\rho_{\text {rcamm }}=\frac{1}{v} \frac{1}{2} \hbar \omega \approx \frac{\hbar}{2 \pi^2 c^3} \int_0^4 \omega^3 d \omega
+=\frac{\hbar}{8 \pi^2 c^3} \omega_{\text {max }}^4
+\Lambda \approx \frac{G^2 m^6}{\hbar^4}
+
+
+
+\int_S(x d \cos d x+y d x d z+2 d x d y)
+\iiint_0(1+1+1) d x d y d z
+\begin{array}{c}
+3 \int_0^d d x \int_0^{-1} d \int_0^l d x
+\frac{3}{3}
+
+

@@ -1,0 +1,9 @@
+<div *ngFor="let section of parsedSections">
+  <ng-container [ngSwitch]="section.type">
+    <!-- Block LaTeX -->
+    <app-latex-paragraph *ngSwitchCase="'block'" [inputString]="section.content"></app-latex-paragraph>
+
+    <!-- Inline LaTeX and text combined -->
+    <app-latex-paragraph *ngSwitchCase="'inline'" [inputString]="section.content"></app-latex-paragraph>
+  </ng-container>
+</div>

@@ -10,57 +10,33 @@
 |                  `yarn explain peer-requirements` | shows the peer dependencies errors                                                      |
 
 
-# Angular 6 / Django Rest Framework / CSRF demo app
+# ConstantsCalculator
 
-This is a demo app showing how to make API calls with Angular 6 and Django Rest Framework, including how to send CSRF headers so API calls will function when logged in.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
 
-## What this repo contains
+## Development server
 
-The following files are interesting:
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-* angular_django_cors - The Django project and main settings file
-* spaceships - An app within the project, containing the Django Rest Framework views and URL routing
-* static/ng-demo - The Angular app source code lives here
-* static/dist - The compiled Angular app is here
+## Code scaffolding
 
-## Requirements
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-You need the following to run this app:
+## Build
 
-* Python 3.5 or higher (Python 2.x is not supported)
-* Virtualenv installed globally
-* Node v8.x or higher
-* NPM v5.x or higher
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Setup
+## Running unit tests
 
-Linux or macOS:
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-Open a terminal at the repo root, and run the following:
+## Running end-to-end tests
 
-```bash
-virtualenv -p /usr/bin/python3 venv
-source venv/bin/activate
-pip install -r requirements.txt
-cd static/ng-demo
-npm install
-ng build
-cd ../..
-python manage.py runserver
-```
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-Your app will be available at http://127.0.0.1:8000.
+## Further help
 
-Windows:
- 
-Most of the commands above should work the same on Windows. I have personally had no luck getting Virtualenv to work on Windows, so I've always had to install all the Python packages globally. Your mileage may vary.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
 
-## Database
 
-This project uses a SQLite database, which lives in the file `db.sqlite3`. SQLite3 support should be available out of the box on most modern operating systems. 
-
-## Questions?
-
-If you spot an error when trying to run the demo app, please file a bug in the GitHub issue tracker.
-
-Please do not create issues or email me asking for support for your own projects. I cannot provide support for your custom applications.
+yy

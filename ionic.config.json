@@ -1,0 +1,20 @@
+{
+  "defaultProject": "constants-calculator",
+  "projects": {
+    "angular-mobile-ap": {
+      "name": "constants-calculator",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular"
+    },
+    "constants-calculator": {
+      "name": "constants-calculator",
+      "integrations": {
+        "capacitor": {}
+      },
+      "type": "angular",
+      "root": ""
+    }
+  }
+}
