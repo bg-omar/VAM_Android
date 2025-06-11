@@ -1,29 +1,25 @@
 import { CUSTOM_ELEMENTS_SCHEMA, ErrorHandler, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClient , HttpClientModule } from "@angular/common/http";
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { environment} from "../environments/environment";
+import { environment } from '../environments/environment';
 import { InAppBrowser } from '@awesome-cordova-plugins/in-app-browser/ngx';
 import { ServiceWorkerModule } from '@angular/service-worker';
-import { IonicStorageModule } from "@ionic/storage-angular";
-
+import { IonicStorageModule } from '@ionic/storage-angular';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { NativeHttpModule } from 'ionic-native-http-connection-backend';
-import { RouteReuseStrategy } from "@angular/router";
-import { CustomErrorHandler } from "./custom-error-handler";
-import {IframeComponent} from "./iframe/iframe.component";
-
-
+import { RouteReuseStrategy } from '@angular/router';
+import { CustomErrorHandler } from './custom-error-handler';
+import { IframeComponent } from './iframe/iframe.component';
 
 @NgModule({
-  declarations: [
-    AppComponent],
+  declarations: [AppComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -33,21 +29,19 @@ import {IframeComponent} from "./iframe/iframe.component";
     IonicModule.forRoot(),
     IonicStorageModule.forRoot(),
     ServiceWorkerModule.register('ngsw-worker.js', {
-      enabled: environment.production
+      enabled: environment.production,
     }),
     NativeHttpModule,
-    IframeComponent
+    IframeComponent,
   ],
   providers: [
     HttpClient,
     InAppBrowser,
-    {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
-    {provide: ErrorHandler, useClass: CustomErrorHandler}
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    { provide: ErrorHandler, useClass: CustomErrorHandler },
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  exports: [
-
-  ]
+  exports: [],
 })
-export class AppModule { }
+export class AppModule {}

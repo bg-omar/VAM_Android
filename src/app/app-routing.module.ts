@@ -5,36 +5,46 @@ export const routes: Routes = [
   {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
+    pathMatch: 'full',
   },
   {
     path: 'differentiator',
-    loadChildren: () => import('./pages/differentiator/differentiator.module').then(m => m.DifferentiatorModule)
+    loadChildren: () =>
+      import('./pages/differentiator/differentiator.module').then(
+        (m) => m.DifferentiatorModule
+      ),
   },
   {
     path: 'viewname',
-    loadChildren: () => import('./pages/view-name/view-name.module').then(m => m.ViewNameModule)
+    loadChildren: () =>
+      import('./pages/view-name/view-name.module').then(
+        (m) => m.ViewNameModule
+      ),
   },
   {
     path: 'home',
-    loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule)
+    loadChildren: () =>
+      import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'vlc',
-    loadChildren: () => import('./pages/vlc/vlc.module').then(m => m.VlcModule)
+    loadChildren: () =>
+      import('./pages/vlc/vlc.module').then((m) => m.VlcModule),
   },
   {
     path: 'account',
-    loadChildren: () => import('./pages/account/account.module').then(m => m.AccountModule)
+    loadChildren: () =>
+      import('./pages/account/account.module').then((m) => m.AccountModule),
   },
   {
     path: 'app',
-    loadChildren: () => import('./pages/tabs-page/tabs-page.module').then(m => m.TabsModule)
-  }
+    loadChildren: () =>
+      import('./pages/tabs-page/tabs-page.module').then((m) => m.TabsModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
