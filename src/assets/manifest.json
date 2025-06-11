@@ -1,6 +1,6 @@
 {
   "name": "constants-calculator",
-  "short_name": "vlc-remote",
+  "short_name": "vam-remote",
   "description": "A remote using Angular ",
   "start_url": "index.html",
   "display": "standalone",

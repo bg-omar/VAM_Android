@@ -4,9 +4,9 @@ import {Component, ElementRef, EventEmitter, Output, Renderer2, ViewChild} from 
 
 
 @Component({
-  templateUrl: './vlc-popover.html',
+  templateUrl: './vam-popover.html',
 })
-export class VlcPopoverPage {
+export class VamPopoverPage {
   @Output() iframeToggle = new EventEmitter<any>();
 
 
@@ -22,7 +22,7 @@ export class VlcPopoverPage {
   }
 
   onIframeToggle(hidePC: string) {
-    console.log("%c 1 --> 25||vlc-popover.ts\n hidePC: ","color:#f0f;", hidePC);
+    console.log("%c 1 --> 25||vam-popover.ts\n hidePC: ","color:#f0f;", hidePC);
 
   }
 }

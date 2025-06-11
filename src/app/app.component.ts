@@ -16,8 +16,8 @@ import { ApiService } from './api.service';
 export class AppComponent implements OnInit {
   appPages = [
     {
-      title: 'vlc',
-      url: '/app/tabs/vlc',
+      title: 'vam',
+      url: '/app/tabs/vam',
       icon: 'easel',
     },
     {
@@ -94,7 +94,7 @@ export class AppComponent implements OnInit {
 
     const setDefaultConfig = async () => {
       if (!this.passvalue) {
-        this.passvalue = prompt('Please enter your VLC password: ', '');
+        this.passvalue = prompt('Please enter your VAM password: ', '');
         {
           await Preferences.set({
             key: 'pass',

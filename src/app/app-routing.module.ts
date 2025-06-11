@@ -27,9 +27,9 @@ export const routes: Routes = [
       import('./pages/home/home.module').then((m) => m.HomeModule),
   },
   {
-    path: 'vlc',
+    path: 'vam',
     loadChildren: () =>
-      import('./pages/vlc/vlc.module').then((m) => m.VlcModule),
+      import('./pages/vam/vam.module').then((m) => m.VamModule),
   },
   {
     path: 'account',

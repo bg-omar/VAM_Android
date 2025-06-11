@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 
 
-import { VlcComponent } from './vlc.component';
-import { VlcRoutingModule } from './vlc-routing.module';
-import { VlcPopoverPage } from './vlc-popover';
+import { VamComponent } from './vam.component';
+import { VamRoutingModule } from './vam-routing.module';
+import { VamPopoverPage } from './vam-popover';
 import {HexatrailComponent} from "../../hexatrail/hexatrail.component";
 import {AccountModule} from "../account/account.module";
 
@@ -22,7 +22,7 @@ import {IFrameToggler} from "../../iframe/iframe-toggler.component";
   imports: [
     CommonModule,
     IonicModule,
-    VlcRoutingModule,
+    VamRoutingModule,
     FormsModule,
     IonicModule,
     IonicModule,
@@ -32,8 +32,8 @@ import {IFrameToggler} from "../../iframe/iframe-toggler.component";
     IFrameToggler,
   ],
   declarations: [
-    VlcComponent, VlcPopoverPage
+    VamComponent, VamPopoverPage
   ],
-  bootstrap: [VlcComponent]
+  bootstrap: [VamComponent]
 })
-export class VlcModule { }
+export class VamModule { }

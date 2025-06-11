@@ -6,7 +6,7 @@
       <ion-item><i class="fas fa-transgender-alt"></i></ion-item>
 
       <ion-buttons slot="primary">
-        <iframe-button *ngFor="let item of vlcdata"
+        <iframe-button *ngFor="let item of vamdata"
                        [frameName]="item.ipAddress"
                        [buttonText]="item.buttenName"
                        [isHidden]="item.hide"
@@ -16,7 +16,7 @@
     </ion-toolbar>
 </ion-header>
 <ion-content>
-  <div *ngFor="let item of vlcdata; index as i " class="frame-holder">
+  <div *ngFor="let item of vamdata; index as i " class="frame-holder">
     <app-iframe class="col-xs-6 col-sm-5 col-md-4"
                 [hidden]="item.hide"
                 [frameName]="item.ipAddress"
