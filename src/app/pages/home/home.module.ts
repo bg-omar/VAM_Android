@@ -9,7 +9,7 @@ import {HomePage} from "./home.page";
 import {HomePageRoutingModule} from "./home-routing.module";
 import {ConstantsListComponent} from "../../constants-list/constants-list.component";
 import {LatexParagraphComponent} from "../../latex-paragraph/latex-paragraph.component";
-import {VlcComponent} from "../vlc/vlc.component";
+import {VamComponent} from "../vam/vam.component";
 
 
 const routes: Routes = [

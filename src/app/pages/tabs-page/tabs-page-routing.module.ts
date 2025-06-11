@@ -19,11 +19,11 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'vlc',
+        path: 'vam',
         children: [
           {
             path: '',
-            loadChildren: () => import('../vlc/vlc.module').then(m => m.VlcModule)
+            loadChildren: () => import('../vam/vam.module').then(m => m.VamModule)
           }
         ]
       },

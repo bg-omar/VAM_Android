@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VlcComponent } from './vlc.component';
+import { VamComponent } from './vam.component';
 
-describe('VlcComponent', () => {
-  let component: VlcComponent;
-  let fixture: ComponentFixture<VlcComponent>;
+describe('VamComponent', () => {
+  let component: VamComponent;
+  let fixture: ComponentFixture<VamComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ VlcComponent ]
+      declarations: [ VamComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(VlcComponent);
+    fixture = TestBed.createComponent(VamComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

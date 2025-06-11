@@ -9,7 +9,7 @@ import {ViewNameComponent} from "./view-name.component";
 import {ViewNameRoutingModule} from "./view-name-routing.module";
 import {ConstantsListComponent} from "../../constants-list/constants-list.component";
 import {LatexParagraphComponent} from "../../latex-paragraph/latex-paragraph.component";
-import {VlcComponent} from "../vlc/vlc.component";
+import {VamComponent} from "../vam/vam.component";
 
 
 const routes: Routes = [

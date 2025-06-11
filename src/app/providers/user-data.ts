@@ -61,12 +61,12 @@ export class UserData {
     });
   }
 
-  setVlcpassword(vlcpassword: string): Promise<any> {
-    return this.storage.set('vlcpassword', vlcpassword);
+  setVampassword(vampassword: string): Promise<any> {
+    return this.storage.set('vampassword', vampassword);
   }
 
-  getVlcpassword(): Promise<string> {
-    return this.storage.get('vlcpassword').then((value) => {
+  getVampassword(): Promise<string> {
+    return this.storage.get('vampassword').then((value) => {
       return value;
     });
   }

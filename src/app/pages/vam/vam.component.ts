@@ -10,7 +10,7 @@ import { Router} from "@angular/router";
 import {StorageService} from "../../services/storage.service";
 import { User} from "../account/account";
 import "jquery";
-import {VlcPopoverPage} from "./vlc-popover";
+import {VamPopoverPage} from "./vam-popover";
 import {
   AlertController,
   ModalController,
@@ -21,13 +21,13 @@ import {UserData} from "../../providers/user-data";
 
 
 @Component({
-  selector: 'app-vlc',
-  templateUrl: './vlc.component.html',
-  styleUrls: ['./vlc.component.scss']
+  selector: 'app-vam',
+  templateUrl: './vam.component.html',
+  styleUrls: ['./vam.component.scss']
 })
-export class VlcComponent implements OnInit, OnChanges {
+export class VamComponent implements OnInit, OnChanges {
   static hideIframe: string;
-  @Input() vlcdata: User[]=  [];
+  @Input() vamdata: User[]=  [];
   all: any;
   routerSubscription: any;
 
@@ -58,24 +58,24 @@ export class VlcComponent implements OnInit, OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     // Check if a specific property changed
-    if (changes['vlcdata']) {
-      const previousValue = changes['vlcdata'].previousValue;
-      const currentValue = changes['vlcdata'].currentValue;
+    if (changes['vamdata']) {
+      const previousValue = changes['vamdata'].previousValue;
+      const currentValue = changes['vamdata'].currentValue;
       console.log(`inputProp changed from ${previousValue} to ${currentValue}`);
     }
   }
 
   toggle($event: User) {
-    this.vlcdata.find(value => {
+    this.vamdata.find(value => {
       if (value.ipAddress === $event.ipAddress) value.hide = !value.hide;
     })
   }
 
   async getJson() {
-      await this.storageServive.getData("VLC").then((data:any) => {
+      await this.storageServive.getData("VAM").then((data:any) => {
         let res: User[];
           res = JSON.parse(data.value);
-          this.vlcdata = res
+          this.vamdata = res
       });
   }
 
@@ -96,7 +96,7 @@ export class VlcComponent implements OnInit, OnChanges {
 
   async presentPopover(event: Event) {
     const popover = await this.popoverCtrl.create({
-      component: VlcPopoverPage,
+      component: VamPopoverPage,
       event
     });
     await popover.present();
