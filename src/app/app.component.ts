@@ -30,6 +30,11 @@ export class AppComponent implements OnInit {
       url: '/app/tabs/account',
       icon: 'people',
     },
+    {
+      title: 'Pestop',
+      url: '/pestop',
+      icon: 'planet',
+    },
   ];
 
   dark = true;

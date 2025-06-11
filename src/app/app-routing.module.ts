@@ -37,6 +37,11 @@ export const routes: Routes = [
       import('./pages/account/account.module').then((m) => m.AccountModule),
   },
   {
+    path: 'pestop',
+    loadComponent: () =>
+      import('./pestop/pestop.component').then((m) => m.PestopComponent),
+  },
+  {
     path: 'app',
     loadChildren: () =>
       import('./pages/tabs-page/tabs-page.module').then((m) => m.TabsModule),
