@@ -104,6 +104,7 @@
     "json-server": "^1.0.0-alpha.23",
     "katex": "^0.16.11",
     "lodash": "^4.17.21",
+    "lex": "^1.7.9",
     "ng-katex": "^2.0.3",
     "ngx-toastr": "18.0.0",
     "node-polyfill-webpack-plugin": "^3.0.0",
