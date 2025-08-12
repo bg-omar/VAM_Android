@@ -4,6 +4,7 @@ import { ToastController } from '@ionic/angular';
 import { GetResult, Preferences } from '@capacitor/preferences';
 import { Storage } from '@ionic/storage-angular';
 
+
 import { Capacitor } from '@capacitor/core';
 import { ApiService } from './api.service';
 
@@ -37,6 +38,7 @@ export class AppComponent implements OnInit {
   passvalue: string;
 
   constructor(
+
     private storage: Storage,
     private swUpdate: SwUpdate,
     private toastCtrl: ToastController,
@@ -46,6 +48,9 @@ export class AppComponent implements OnInit {
   }
 
   async ngOnInit() {
+
+
+
     this.apiService.getData().subscribe((data) => {
       console.log(data);
     });
@@ -86,6 +91,7 @@ export class AppComponent implements OnInit {
       this.initializeDarkTheme(mediaQuery.matches)
     );
   }
+
 
   initializeApp() {
     const getConfig = async () => {

@@ -12,6 +12,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { IonicStorageModule } from '@ionic/storage-angular';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
+import { ChatArchiveComponent } from './chat-archive/chat-archive.component';
+
 
 import { NativeHttpModule } from 'ionic-native-http-connection-backend';
 import { RouteReuseStrategy } from '@angular/router';
@@ -19,7 +21,7 @@ import { CustomErrorHandler } from './custom-error-handler';
 import { IframeComponent } from './iframe/iframe.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, ChatArchiveComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -45,3 +47,5 @@ import { IframeComponent } from './iframe/iframe.component';
   exports: [],
 })
 export class AppModule {}
+
+

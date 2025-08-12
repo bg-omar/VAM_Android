@@ -1,0 +1,30 @@
+<!-- Container for the treemap. The height and width are controlled by the
+     surrounding CSS flex layout in styles.css. -->
+<div class="treemap-container">
+  <div
+    *ngFor="let item of layoutItems"
+    class="treemap-rect"
+    [style.left.%]="item.x * 100"
+    [style.top.%]="item.y * 100"
+    [style.width.%]="item.w * 100"
+    [style.height.%]="item.h * 100"
+    [style.background]="getColorForRole(item.node.authorRole)"
+    (click)="onNodeClick(item)"
+    [title]="item.node.content.substring(0, 100)"
+  >
+    <!-- Show a snippet of the message. We display only the first 30 characters to avoid clutter. -->
+    <span style="font-size: 0.6rem; padding: 2px; display: block; width: 100%; height: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+      {{ item.node.content | slice:0:30 }}
+    </span>
+  </div>
+</div>
+
+<!-- Side panel displaying details of the selected message -->
+<div class="side-panel" *ngIf="selectedNode">
+  <h3 style="margin-top:0">Selected Turn</h3>
+  <p><strong>Role:</strong> {{ selectedNode.authorRole }}</p>
+  <p><strong>Content:</strong></p>
+  <pre style="white-space: pre-wrap; font-size: 0.8rem;">
+{{ selectedNode.content }}
+  </pre>
+</div>
