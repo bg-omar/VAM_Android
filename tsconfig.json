@@ -1,6 +1,18 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "types": [
+      "node"
+    ],
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "allowJs": true,
+    "jsx": "react-jsx",
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
@@ -20,11 +32,8 @@
     "target": "ES2022",
     "module": "CommonJS",
     "emitDecoratorMetadata": true,
-    "lib": [
-      "ES2022",
-      "dom"
-    ],
     "paths": {
+      "@/*": ["./src/app/*"],
       "@app/*": ["./src/app/*"],
       "@assets/*": ["./src/assets/*"],
       "@lib/*": ["./src/lib/*"]
@@ -35,6 +44,10 @@
     "enableI18nLegacyMessageIdFormat": true,
     "strictInjectionParameters": false,
     "strictInputAccessModifiers": false,
-    "strictTemplates": false
-  }
+    "strictTemplates": false,
+    "disableTypeScriptVersionCheck": true
+  },
+  "files": [
+    "./index.tsx"
+  ]
 }

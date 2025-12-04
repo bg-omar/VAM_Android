@@ -31,10 +31,116 @@
         </ion-list>
       </ion-content>
     </ion-menu>
+<!--    <div class="min-h-screen bg-black text-gray-100 font-sans selection:bg-cyan-500 selection:text-black">-->
 
+<!--      &lt;!&ndash; Sticky Header Controls &ndash;&gt;-->
+<!--      <header class="sticky top-0 z-50 bg-gray-900/80 backdrop-blur-md border-b border-gray-800 shadow-2xl">-->
+<!--        <div class="max-w-7xl mx-auto px-4 py-4">-->
+<!--          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6">-->
+
+<!--            &lt;!&ndash; Title &ndash;&gt;-->
+<!--            <div class="flex items-center gap-3">-->
+<!--              <div class="p-2 bg-cyan-500/10 rounded-lg border border-cyan-500/20">-->
+<!--                <app-icon name="activity" class="text-cyan-400" [size]="24"></app-icon>-->
+<!--              </div>-->
+<!--              <div>-->
+<!--                <h1 class="text-2xl font-bold text-white tracking-tight">Physics <span class="text-cyan-400">Simulator</span></h1>-->
+<!--              </div>-->
+<!--            </div>-->
+
+<!--            &lt;!&ndash; Controls Grid &ndash;&gt;-->
+<!--            <div class="flex-1 grid grid-cols-2 md:grid-cols-4 gap-4 items-end">-->
+
+<!--              &lt;!&ndash; Time/Speed Control &ndash;&gt;-->
+<!--              <div class="space-y-1.5">-->
+<!--                <label class="text-xs font-medium text-gray-400 flex justify-between">-->
+<!--                  <span>Sim Speed</span>-->
+<!--                  <span class="text-cyan-400">{{ isPlaying ? globalSettings.timeScale.toFixed(1) + 'x' : 'PAUSED' }}</span>-->
+<!--                </label>-->
+<!--                <div class="flex items-center gap-2 h-7">-->
+<!--                  <button-->
+<!--                    (click)="togglePlay()"-->
+<!--                    class="p-1.5 rounded transition-colors"-->
+<!--                    [class]="isPlaying ? 'bg-gray-800 hover:bg-gray-700 text-red-400' : 'bg-cyan-500 hover:bg-cyan-400 text-black'"-->
+<!--                  >-->
+<!--                    <app-icon [name]="isPlaying ? 'pause' : 'play'" [size]="14"></app-icon>-->
+<!--                  </button>-->
+<!--                  <input-->
+<!--                    type="range" min="0.1" max="3" step="0.1"-->
+<!--                    [value]="isPlaying ? globalSettings.timeScale : 1"-->
+<!--                    (input)="onTimeScaleChange($event)"-->
+<!--                    class="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--              &lt;!&ndash; Gravity Control &ndash;&gt;-->
+<!--              <div class="space-y-1.5">-->
+<!--                <label class="text-xs font-medium text-gray-400 flex justify-between">-->
+<!--                  <span>Gravity</span>-->
+<!--                  <span class="text-cyan-400">{{ globalSettings.gravityMultiplier.toFixed(1) }}x</span>-->
+<!--                </label>-->
+<!--                <div class="flex items-center h-7">-->
+<!--                  <input-->
+<!--                    type="range" min="0" max="3" step="0.1"-->
+<!--                    [value]="globalSettings.gravityMultiplier"-->
+<!--                    (input)="updateSetting('gravityMultiplier', $event)"-->
+<!--                    class="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--              &lt;!&ndash; Rotation Control &ndash;&gt;-->
+<!--              <div class="space-y-1.5">-->
+<!--                <label class="text-xs font-medium text-gray-400 flex justify-between">-->
+<!--                  <span>Rotation</span>-->
+<!--                  <span class="text-cyan-400">{{ globalSettings.rotationMultiplier.toFixed(1) }}x</span>-->
+<!--                </label>-->
+<!--                <div class="flex items-center h-7">-->
+<!--                  <input-->
+<!--                    type="range" min="0" max="5" step="0.1"-->
+<!--                    [value]="globalSettings.rotationMultiplier"-->
+<!--                    (input)="updateSetting('rotationMultiplier', $event)"-->
+<!--                    class="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--              &lt;!&ndash; Restitution Control &ndash;&gt;-->
+<!--              <div class="space-y-1.5">-->
+<!--                <label class="text-xs font-medium text-gray-400 flex justify-between">-->
+<!--                  <span>Bounciness</span>-->
+<!--                  <span class="text-cyan-400">{{ globalSettings.bouncinessMultiplier.toFixed(1) }}x</span>-->
+<!--                </label>-->
+<!--                <div class="flex items-center h-7">-->
+<!--                  <input-->
+<!--                    type="range" min="0.1" max="1" step="0.1"-->
+<!--                    [value]="globalSettings.bouncinessMultiplier"-->
+<!--                    (input)="updateSetting('bouncinessMultiplier', $event)"-->
+<!--                    class="w-full h-1.5 bg-gray-700 rounded-lg appearance-none cursor-pointer accent-cyan-500"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </div>-->
+
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </header>-->
+
+<!--      &lt;!&ndash; Grid Content &ndash;&gt;-->
+<!--      <main class="max-w-7xl mx-auto px-4 py-8">-->
+<!--        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 justify-items-center">-->
+<!--          <app-simulation-card-->
+<!--            *ngFor="let preset of presets"-->
+<!--            [config]="preset"-->
+<!--            [globalSettings]="globalSettings"-->
+<!--          ></app-simulation-card>-->
+<!--        </div>-->
+<!--      </main>-->
+
+<!--    </div>-->
     <ion-router-outlet id="main-content"></ion-router-outlet>
 
   </ion-split-pane>
 
 </ion-app>
-

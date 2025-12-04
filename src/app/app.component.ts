@@ -3,10 +3,28 @@ import { SwUpdate } from '@angular/service-worker';
 import { ToastController } from '@ionic/angular';
 import { GetResult, Preferences } from '@capacitor/preferences';
 import { Storage } from '@ionic/storage-angular';
-
+import { presets } from './utils/presets';
 
 import { Capacitor } from '@capacitor/core';
 import { ApiService } from './api.service';
+import {CommonModule} from "@angular/common";
+import {SimulationCardComponent} from "@/components/simulation-card.component";
+import {IconComponent} from "@/components/icon.component";
+import { GlobalSettings } from './types';
+import {
+  IonApp,
+  IonContent, IonIcon,
+  IonItem,
+  IonLabel,
+  IonList,
+  IonListHeader,
+  IonMenu,
+  IonMenuToggle,
+  IonRouterOutlet,
+  IonSplitPane, IonToggle
+} from "@ionic/angular/standalone";
+import {FormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-root',
@@ -15,6 +33,17 @@ import { ApiService } from './api.service';
   encapsulation: ViewEncapsulation.None,
 })
 export class AppComponent implements OnInit {
+  presets = presets;
+
+  globalSettings: GlobalSettings = {
+    timeScale: 1.0,
+    gravityMultiplier: 1.0,
+    rotationMultiplier: 1.0,
+    bouncinessMultiplier: 1.0,
+  };
+
+  isPlaying = true;
+
   appPages = [
     {
       title: 'vam',
@@ -137,5 +166,26 @@ export class AppComponent implements OnInit {
   // Add or remove the "dark" class on the document body
   toggleDarkTheme(shouldAdd) {
     document.body.classList.toggle('dark', shouldAdd);
+  }
+
+
+  togglePlay() {
+    if (this.isPlaying) {
+      this.globalSettings = { ...this.globalSettings, timeScale: 0 };
+    } else {
+      this.globalSettings = { ...this.globalSettings, timeScale: 1 };
+    }
+    this.isPlaying = !this.isPlaying;
+  }
+
+  onTimeScaleChange(event: Event) {
+    const value = parseFloat((event.target as HTMLInputElement).value);
+    if (!this.isPlaying) this.togglePlay();
+    this.globalSettings = { ...this.globalSettings, timeScale: value };
+  }
+
+  updateSetting(key: keyof GlobalSettings, event: Event) {
+    const value = parseFloat((event.target as HTMLInputElement).value);
+    this.globalSettings = { ...this.globalSettings, [key]: value };
   }
 }

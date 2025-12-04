@@ -8,20 +8,6 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'differentiator',
-    loadChildren: () =>
-      import('./pages/differentiator/differentiator.module').then(
-        (m) => m.DifferentiatorModule
-      ),
-  },
-  {
-    path: 'viewname',
-    loadChildren: () =>
-      import('./pages/view-name/view-name.module').then(
-        (m) => m.ViewNameModule
-      ),
-  },
-  {
     path: 'home',
     loadChildren: () =>
       import('./pages/home/home.module').then((m) => m.HomeModule),

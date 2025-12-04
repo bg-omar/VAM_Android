@@ -19,6 +19,8 @@ import { NativeHttpModule } from 'ionic-native-http-connection-backend';
 import { RouteReuseStrategy } from '@angular/router';
 import { CustomErrorHandler } from './custom-error-handler';
 import { IframeComponent } from './iframe/iframe.component';
+import {IconComponent} from "@app/components/icon.component";
+import {SimulationCardComponent} from "@app/components/simulation-card.component";
 
 @NgModule({
   declarations: [AppComponent, ChatArchiveComponent],
@@ -35,6 +37,9 @@ import { IframeComponent } from './iframe/iframe.component';
     }),
     NativeHttpModule,
     IframeComponent,
+    IconComponent,
+    SimulationCardComponent,
+    AppComponent,
   ],
   providers: [
     HttpClient,
@@ -47,5 +52,3 @@ import { IframeComponent } from './iframe/iframe.component';
   exports: [],
 })
 export class AppModule {}
-
-

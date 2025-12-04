@@ -10,6 +10,10 @@ import { environment } from './environments/environment';
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 
 
+import 'zone.js';
+import '@angular/compiler';
+
+
 
 import { defineCustomElements as pwaElements} from '@ionic/pwa-elements/loader';
 import { Capacitor } from '@capacitor/core';
@@ -39,6 +43,8 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 
 defineCustomElements(window);
 
+bootstrapApplication(AppComponent)
+  .catch(err => console.error('Angular bootstrap error:', err));
 //
 // bootstrapApplication(AppComponent, appConfig)
 //   .catch((err: any) => console.error(err));

@@ -7,7 +7,6 @@ import { IonicModule } from '@ionic/angular';
 import { VamComponent } from './vam.component';
 import { VamRoutingModule } from './vam-routing.module';
 import { VamPopoverPage } from './vam-popover';
-import {HexatrailComponent} from "../../hexatrail/hexatrail.component";
 import {AccountModule} from "../account/account.module";
 
 import {IframeComponent} from "../../iframe/iframe.component";
@@ -26,7 +25,6 @@ import {IFrameToggler} from "../../iframe/iframe-toggler.component";
     FormsModule,
     IonicModule,
     IonicModule,
-    HexatrailComponent,
     AccountModule,
     IframeComponent,
     IFrameToggler,

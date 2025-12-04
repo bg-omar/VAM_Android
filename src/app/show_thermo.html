@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SST Thermodynamica: Vortex & Bohr</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #e2e8f0; }
+    .glass-panel { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); }
+    canvas { touch-action: none; }
+
+    input[type=range] {
+      -webkit-appearance: none;
+      width: 100%;
+      background: transparent;
+    }
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      height: 16px;
+      width: 16px;
+      border-radius: 50%;
+      background: #38bdf8;
+      cursor: pointer;
+      margin-top: -6px;
+    }
+    input[type=range]::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 4px;
+      cursor: pointer;
+      background: #475569;
+      border-radius: 2px;
+    }
+  </style>
+</head>
+<body class="flex flex-col min-h-screen">
+
+<!-- Header -->
+<header class="p-4 border-b border-slate-700 bg-slate-900/80 sticky top-0 z-10">
+  <div class="max-w-7xl mx-auto flex justify-between items-center">
+    <h1 class="text-xl md:text-2xl font-bold text-sky-400">SST Thermodynamica <span class="text-xs text-slate-400 font-normal">Core & Bohr Relatie</span></h1>
+    <div class="text-xs text-slate-500">v0.5.16 Linear Axis</div>
+  </div>
+</header>
+
+<main class="flex-grow p-4 grid grid-cols-1 lg:grid-cols-12 gap-6 max-w-7xl mx-auto w-full">
+
+  <!-- Left Column: Controls -->
+  <div class="lg:col-span-4 space-y-6">
+
+    <!-- Temperature Control -->
+    <div class="glass-panel p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
+      <h2 class="text-lg font-semibold text-white mb-4 flex items-center">
+        Thermische Zwelling ($T$)
+      </h2>
+
+      <div class="mb-6">
+        <input type="range" id="tempSlider" min="0" max="10" step="0.01" value="0">
+        <div class="flex justify-between text-xs text-slate-400 mt-2">
+          <span>Compacte Kern</span>
+          <span>Geëxpandeerde Kern</span>
+        </div>
+      </div>
+
+      <div class="bg-slate-800/50 p-3 rounded-lg text-sm space-y-2 font-mono">
+        <div class="flex justify-between">
+          <span class="text-slate-400">Straal ($r$):</span>
+          <span id="val_r" class="text-sky-300">1.41 fm</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Swirl ($v_&#123;\circlearrowleft&#125;$):</span>
+          <span id="val_v" class="text-green-400">1.09 Mm/s</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Derived Bohr Radius Section -->
+    <div class="glass-panel p-6 rounded-xl border-l-4 border-indigo-500">
+      <h3 class="text-md font-semibold text-indigo-300 mb-3">SST Atoom Schaal ($a_0$)</h3>
+      <div class="mb-2 text-xs text-slate-400">
+        De Bohr-straal is in SST een afgeleide van de hydrodynamische balans:
+        <div class="my-2 py-2 px-2 bg-slate-900 rounded font-mono text-center text-indigo-200">
+          $$a_0 = \frac&#123;c^2 r_c&#125;&#123;2 v_&#123;\circlearrowleft&#125;^2&#125;$$
+        </div>
+      </div>
+      <div class="bg-slate-800/50 p-3 rounded-lg text-sm flex justify-between items-center border border-indigo-500/30">
+        <span class="text-slate-400">Berekende $a_0$:</span>
+        <span id="val_a0" class="font-mono text-indigo-300 font-bold text-lg">5.29e-11 m</span>
+      </div>
+      <div class="flex justify-between mt-2 text-[10px] text-slate-500">
+        <span>CODATA Ref:</span>
+        <span>5.29177e-11 m</span>
+      </div>
+    </div>
+
+    <!-- Physics Output -->
+    <div class="glass-panel p-6 rounded-xl">
+      <h3 class="text-md font-semibold text-sky-400 mb-3">Effecten</h3>
+      <div class="mb-4">
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-sm font-medium">Swirl Klok ($S_t$)</span>
+          <span id="val_st" class="text-xs font-mono bg-slate-700 px-2 py-1 rounded">0.99999</span>
+        </div>
+        <div class="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+          <div id="bar_st" class="bg-purple-500 h-full transition-all duration-300" style="width: 100%"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Canonical Constants Editor -->
+    <div class="glass-panel p-4 rounded-xl border border-slate-700">
+      <div class="flex justify-between items-center cursor-pointer" onclick="document.getElementById('advSettings').classList.toggle('hidden')">
+        <h3 class="text-sm font-semibold text-slate-300">Geavanceerd: Canonieke Variabelen</h3>
+        <span class="text-xs text-slate-500">▼</span>
+      </div>
+
+      <div id="advSettings" class="hidden mt-4 space-y-3 text-xs">
+        <div class="grid grid-cols-2 gap-2 items-center">
+          <label>Circulatie ($\Gamma_0$):</label>
+          <input type="number" id="inp_gamma" value="6434" class="bg-slate-800 border border-slate-600 rounded px-2 py-1 text-right text-white">
+        </div>
+        <div class="grid grid-cols-2 gap-2 items-center">
+          <label>Vloeistofdichtheid ($\rho_f$):</label>
+          <input type="number" id="inp_rho" value="7.0e-7" step="1e-8" class="bg-slate-800 border border-slate-600 rounded px-2 py-1 text-right text-white">
+        </div>
+        <div class="grid grid-cols-2 gap-2 items-center">
+          <label>Kernstraal ($r_c$):</label>
+          <input type="number" id="inp_rc" value="1.40897e-15" step="0.01e-15" class="bg-slate-800 border border-slate-600 rounded px-2 py-1 text-right text-white">
+        </div>
+        <div class="grid grid-cols-2 gap-2 items-center">
+          <label>Lichtsnelheid ($c$):</label>
+          <input type="number" id="inp_c" value="299792458" class="bg-slate-800 border border-slate-600 rounded px-2 py-1 text-right text-white">
+        </div>
+        <button onclick="resetConstants()" class="w-full bg-slate-700 hover:bg-slate-600 text-white py-1 rounded mt-2 transition">Reset naar Canoniek</button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Right Column: Visualization -->
+  <div class="lg:col-span-8 flex flex-col space-y-6">
+
+    <!-- Main Visualizer -->
+    <div class="glass-panel p-1 rounded-xl relative h-[400px] flex items-center justify-center bg-black overflow-hidden shadow-2xl">
+      <canvas id="simCanvas" class="absolute inset-0 w-full h-full"></canvas>
+
+      <div class="absolute bottom-4 left-4 text-xs text-slate-500 font-mono">
+        Visualisatie: $r_c$ (Femtometer schaal)
+      </div>
+    </div>
+
+    <!-- Energy Potential Graph -->
+    <div class="glass-panel p-4 rounded-xl flex-grow flex flex-col">
+      <h3 class="text-sm font-semibold text-slate-300 mb-2">Potentiaalput & Gouden Lagen</h3>
+      <div class="relative w-full h-48">
+        <canvas id="energyChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+  // --- 1. Canonical State & Constants ---
+  var DEFAULT_CONSTANTS = {
+    Gamma0: 6.434e3,        // m^2/s (Force derived)
+    rho_f: 7.0e-7,          // kg/m^3
+    rc: 1.40897e-15,        // m (1.41 fm)
+    c: 299792458,           // m/s
+    v_canon: 1.09384563e6   // m/s (Target speed)
+  };
+
+  // Calculate the geometry factor chi_v once based on defaults
+  var CHI_V = (DEFAULT_CONSTANTS.v_canon * 2 * Math.PI * DEFAULT_CONSTANTS.rc) / DEFAULT_CONSTANTS.Gamma0;
+
+  var S = { ...DEFAULT_CONSTANTS };
+
+  var state = {
+    tempRatio: 0.0,
+    currentR: S.rc,
+    currentV: 0,
+    timeDilation: 1.0,
+    derivedA0: 0
+  };
+
+  // --- 2. Physics Engine ---
+
+  function updatePhysics() {
+    // Read Inputs
+    S.Gamma0 = parseFloat(document.getElementById('inp_gamma').value);
+    S.rho_f = parseFloat(document.getElementById('inp_rho').value);
+    S.rc = parseFloat(document.getElementById('inp_rc').value);
+    S.c = parseFloat(document.getElementById('inp_c').value);
+
+    // 1. Temperature / Swelling
+    var sliderVal = parseFloat(document.getElementById('tempSlider').value);
+    var strain = sliderVal * 0.1; // 0 to 1
+
+    state.tempRatio = strain;
+    state.currentR = S.rc * (1 + strain);
+
+    // 2. Swirl Velocity
+    state.currentV = (CHI_V * S.Gamma0) / (2 * Math.PI * state.currentR);
+
+    // 3. Time Dilation
+    var beta = state.currentV / S.c;
+    var arg = 1 - beta*beta;
+    state.timeDilation = arg > 0 ? Math.sqrt(arg) : 0;
+
+    // 4. BOHR RADIUS (a0)
+    var v_ground = (CHI_V * S.Gamma0) / (2 * Math.PI * S.rc);
+    state.derivedA0 = (Math.pow(S.c, 2) * S.rc) / (2 * Math.pow(v_ground, 2));
+
+    updateUI();
+    updateChart();
+  }
+
+  // --- 3. UI Updates ---
+
+  function updateUI() {
+    var fmtR = (val) => (val * 1e15).toFixed(3) + " fm";
+    var fmtV = (val) => (val / 1e6).toFixed(3) + " Mm/s";
+
+    document.getElementById('val_r').innerText = fmtR(state.currentR);
+    document.getElementById('val_v').innerText = fmtV(state.currentV);
+    document.getElementById('val_st').innerText = state.timeDilation.toFixed(10);
+    document.getElementById('val_a0').innerText = state.derivedA0.toExponential(4) + " m";
+
+    var percent = state.timeDilation * 100;
+    document.getElementById('bar_st').style.width = percent + "%";
+  }
+
+  function resetConstants() {
+    document.getElementById('inp_gamma').value = DEFAULT_CONSTANTS.Gamma0;
+    document.getElementById('inp_rho').value = DEFAULT_CONSTANTS.rho_f;
+    document.getElementById('inp_rc').value = DEFAULT_CONSTANTS.rc;
+    document.getElementById('inp_c').value = DEFAULT_CONSTANTS.c;
+    updatePhysics();
+  }
+
+  // --- 4. Canvas Visualization ---
+  var canvas = document.getElementById('simCanvas');
+  var ctx = canvas.getContext('2d');
+
+  function resizeCanvas() {
+    if(canvas.parentElement) {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+  }
+  window.addEventListener('resize', resizeCanvas);
+  resizeCanvas();
+
+  var rotationAngle = 0;
+
+  function draw() {
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    var cx = canvas.width / 2;
+    var cy = canvas.height / 2;
+    var scale = Math.min(canvas.width, canvas.height) / 8;
+
+    var visualR = (state.currentR / S.rc) * scale;
+    var groundR = scale;
+
+    // Ground State Ref
+    ctx.beginPath();
+    ctx.arc(cx, cy, groundR, 0, Math.PI * 2);
+    ctx.strokeStyle = '#475569';
+    ctx.setLineDash([5, 5]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Vortex Core
+    var heatRatio = Math.min(1, state.tempRatio / 1.0);
+    var rColor = Math.floor(56 + heatRatio * (239 - 56));
+    var gColor = Math.floor(189 - heatRatio * (189 - 68));
+    var bColor = Math.floor(248 - heatRatio * (248 - 68));
+    var coreColor = `rgb(${rColor}, ${gColor}, ${bColor})`;
+
+    ctx.beginPath();
+    ctx.arc(cx, cy, visualR, 0, Math.PI * 2);
+    ctx.strokeStyle = coreColor;
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.fillStyle = coreColor.replace(')', ', 0.1)').replace('rgb', 'rgba');
+    ctx.fill();
+
+    // Particle
+    var speedFactor = 0.05 * Math.pow(S.rc / state.currentR, 2);
+    rotationAngle += speedFactor;
+
+    var px = cx + visualR * Math.cos(rotationAngle);
+    var py = cy + visualR * Math.sin(rotationAngle);
+
+    ctx.beginPath();
+    ctx.arc(px, py, 4, 0, Math.PI*2);
+    ctx.fillStyle = '#fff';
+    ctx.fill();
+
+    // Velocity Vector
+    var vecLen = 40 * (S.rc / state.currentR);
+    var tx = -Math.sin(rotationAngle);
+    var ty = Math.cos(rotationAngle);
+
+    ctx.beginPath();
+    ctx.moveTo(px, py);
+    ctx.lineTo(px + tx * vecLen, py + ty * vecLen);
+    ctx.strokeStyle = '#22c55e';
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    requestAnimationFrame(draw);
+  }
+  draw();
+
+  // --- 5. Chart.js (FIXED: Linear Axis) ---
+  var ctxChart = document.getElementById('energyChart').getContext('2d');
+  var phi = 1.618;
+
+  // Prepare initial line data as {x,y} points for Linear Scale
+  var lineDataPoints = [];
+  for (var i = 0.8; i <= 2.5; i += 0.01) {
+    var pot = 10 * Math.pow(i - 1, 2);
+    var logP = Math.cos( (2 * Math.PI / Math.log(phi)) * Math.log(i) );
+    pot -= 1.5 * logP;
+    lineDataPoints.push({x: i, y: pot});
+  }
+
+  var chart = new Chart(ctxChart, {
+    type: 'line',
+    data: {
+      datasets: [{
+        label: 'SST Potentiaal',
+        data: lineDataPoints,
+        borderColor: '#38bdf8',
+        borderWidth: 2,
+        pointRadius: 0,
+        tension: 0.4,
+        fill: true,
+        backgroundColor: 'rgba(56, 189, 248, 0.1)'
+      },
+        {
+          label: 'Huidige Staat',
+          data: [],
+          pointRadius: 6,
+          pointBackgroundColor: '#f59e0b',
+          type: 'scatter'
+        }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        x: {
+          type: 'linear',
+          display: false, // Hide axis for clean look
+          min: 0.8,
+          max: 2.5
+        },
+        y: {
+          display: false
+        }
+      },
+      animation: false
+    }
+  });
+
+  function updateChart() {
+    var ratio = state.currentR / S.rc;
+    var pot = 10 * Math.pow(ratio - 1, 2);
+    var logP = Math.cos( (2 * Math.PI / Math.log(phi)) * Math.log(ratio) );
+    pot -= 1.5 * logP;
+
+    // Now we can pass exact X value because axis is linear
+    chart.data.datasets[1].data = [{x: ratio, y: pot}];
+    chart.update();
+  }
+
+  // Init Listeners
+  document.getElementById('tempSlider').addEventListener('input', updatePhysics);
+  document.getElementById('inp_gamma').addEventListener('change', updatePhysics);
+  document.getElementById('inp_rho').addEventListener('change', updatePhysics);
+  document.getElementById('inp_rc').addEventListener('change', updatePhysics);
+  document.getElementById('inp_c').addEventListener('change', updatePhysics);
+
+  // Initial Call
+  updatePhysics();
+
+</script>
+</body>
+</html>

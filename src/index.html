@@ -1,7 +1,8 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ConstantsCalculator</title>
   <base href="/">
   <link rel="icon" type="image/x-icon" href="./assets/favicon.png">
@@ -45,9 +46,45 @@
   <script type="module"
           src="../public/javascripts/input.js">
   </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background-color: #000000;
+    }
+    /* Custom scrollbar for better dark mode feel */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #475569;
+    }
+  </style>
+  <script type="importmap">
+    {
+      "imports": {
+        "@angular/core": "https://esm.sh/@angular/core@18.2.0",
+        "@angular/common": "https://esm.sh/@angular/common@18.2.0",
+        "@angular/platform-browser": "https://esm.sh/@angular/platform-browser@18.2.0",
+        "@angular/compiler": "https://esm.sh/@angular/compiler@18.2.0",
+        "@angular/forms": "https://esm.sh/@angular/forms@18.2.0",
+        "rxjs": "https://esm.sh/rxjs@7.8.1",
+        "zone.js": "https://esm.sh/zone.js@0.14.10"
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="/index.css">
 </head>
 <body>
   <app-root></app-root>
   <script src="bundle.js"></script>
+  <script type="module" src="./main.ts"></script>
 </body>
 </html>

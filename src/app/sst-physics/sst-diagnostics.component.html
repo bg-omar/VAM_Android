@@ -1,0 +1,87 @@
+<section class="sst-section">
+  <h2>SST Topological Mass Table</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>Particle</th>
+          <th>Topology</th>
+          <th>Hyperbolic Vol</th>
+          <th>SST Mass (kg)</th>
+          <th>CODATA Mass (kg)</th>
+          <th>Error (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of massRows">
+          <td>{{ row.particle }}</td>
+          <td>{{ row.topology }}</td>
+          <td>{{ row.hyperbolicVolume }}</td>
+          <td>{{ row.sstMassKg | number: '1.4-4' }}</td>
+          <td>{{ row.codataMassKg | number: '1.4-4' }}</td>
+          <td>{{ row.errorPercent | number: '1.3-3' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sst-section">
+  <h2>Swirl Coulomb Constant (Λ)</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>LaTeX</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of lambdaRows">
+          <td><code>{{ row.latex }}</code></td>
+          <td>{{ row.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sst-section">
+  <h2>Bohr Radius Relations</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>LaTeX</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of bohrRadiusRows">
+          <td><code>{{ row.latex }}</code></td>
+          <td>{{ row.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="sst-section">
+  <h2>Density Checks</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>LaTeX</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of densityRows">
+          <td><code>{{ row.latex }}</code></td>
+          <td>{{ row.value }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

@@ -12,13 +12,13 @@ import {LatexParagraphComponent} from "../../latex-paragraph/latex-paragraph.com
 import {RouterOutlet} from "@angular/router";
 import {CalculatorComponent} from "../../calculator/calculator.component";
 import {DialogComDialog} from "../../generate-equation/generate-equation.component";
-import {DifferentiatorComponent} from "../differentiator/differentiator.component";
 import {ViewNameComponent} from "../view-name/view-name.component";
 import {FormsModule} from "@angular/forms";
 import {ApiService} from "../../services/api.service";
 import {EmoticonListComponent} from "../../emoticon-list/emoticon-list.component";
 import {LargeLatexTextComponent} from "../../large-latex-text-component/large-latex-text.component";
 import {ChatArchiveService, ParsedConversation} from "@app/services/chat-archive.service";
+import {AppModule} from "@/app.module";
 
 
 @Component({
@@ -28,7 +28,7 @@ import {ChatArchiveService, ParsedConversation} from "@app/services/chat-archive
   styleUrls: ['home.page.scss'],
   imports: [
     CdkDrag,
-    NgForOf, IonicModule, CommonModule, ConstantsListComponent, IonApp, IonRouterOutlet, LatexParagraphComponent, RouterOutlet, CalculatorComponent, DialogComDialog, DifferentiatorComponent, ViewNameComponent, FormsModule, EmoticonListComponent, LargeLatexTextComponent
+    NgForOf, IonicModule, CommonModule, ConstantsListComponent, IonApp, IonRouterOutlet, LatexParagraphComponent, RouterOutlet, CalculatorComponent, DialogComDialog, ViewNameComponent, FormsModule, EmoticonListComponent, LargeLatexTextComponent, AppModule
   ],
 })
 export class HomePage implements  OnInit {

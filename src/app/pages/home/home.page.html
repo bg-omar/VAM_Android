@@ -29,37 +29,37 @@
 <!--        <app-differentiator></app-differentiator>-->
 <!--        <app-view-name></app-view-name>-->
         <!--            <calc-home></calc-home>-->
-        <form (submit)="onSubmit()">
-          <input type="text" [(ngModel)]="functionInput" placeholder="Enter function" name="function">
-          <button type="submit">Calculate Derivative</button>
-        </form>
-        <div *ngIf="result">
-          <h3>Result:</h3>
-          <p>{{ result.result }}</p>
-          <h3>Story:</h3>
-          <ul>
-            <li *ngFor="let step of result.story">{{ step }}</li>
-          </ul>
-        </div>
+<!--        <form (submit)="onSubmit()">-->
+<!--          <input type="text" [(ngModel)]="functionInput" placeholder="Enter function" name="function">-->
+<!--          <button type="submit">Calculate Derivative</button>-->
+<!--        </form>-->
+<!--        <div *ngIf="result">-->
+<!--          <h3>Result:</h3>-->
+<!--          <p>{{ result.result }}</p>-->
+<!--          <h3>Story:</h3>-->
+<!--          <ul>-->
+<!--            <li *ngFor="let step of result.story">{{ step }}</li>-->
+<!--          </ul>-->
+<!--        </div>-->
 <!--        <app-large-latex-text-component></app-large-latex-text-component>-->
 
-        <h1>Chat Archive Viewer</h1>
-        <div class="upload">
-          <label for="fileInput">Load JSON Archive:</label>
-          <input id="fileInput" type="file" accept="application/json" (change)="onFileSelected($event)" />
-        </div>
+<!--        <h1>Chat Archive Viewer</h1>-->
+<!--        <div class="upload">-->
+<!--          <label for="fileInput">Load JSON Archive:</label>-->
+<!--          <input id="fileInput" type="file" accept="application/json" (change)="onFileSelected($event)" />-->
+<!--        </div>-->
 
-        <div *ngIf="conversations && conversations.length > 0" class="selector">
-          <label for="conversationSelect">Select Conversation:</label>
-          <select id="conversationSelect" [(ngModel)]="selectedIndex">
-            <option *ngFor="let conv of conversations; let i = index" [ngValue]="i">
-              {{ conv.title || ('Conversation ' + (i + 1)) }}
-            </option>
-          </select>
-        </div>
+<!--        <div *ngIf="conversations && conversations.length > 0" class="selector">-->
+<!--          <label for="conversationSelect">Select Conversation:</label>-->
+<!--          <select id="conversationSelect" [(ngModel)]="selectedIndex">-->
+<!--            <option *ngFor="let conv of conversations; let i = index" [ngValue]="i">-->
+<!--              {{ conv.title || ('Conversation ' + (i + 1)) }}-->
+<!--            </option>-->
+<!--          </select>-->
+<!--        </div>-->
 
         <!-- Render the treemap for the selected conversation -->
-        <app-chat-archive *ngIf="selectedConversation" [conversation]="selectedConversation"></app-chat-archive>
+<!--        <app-chat-archive *ngIf="selectedConversation" [conversation]="selectedConversation"></app-chat-archive>-->
       </div><!--The end of Right-Side-->
     </div>  <!--The end of content-->
   </main>
